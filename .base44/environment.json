@@ -2,5 +2,11 @@
   "previewPort": 3000,
   "healthPath": "/",
   "startCommand": "docker compose -f docker-compose.base44.yml up -d",
-  "secrets": []
+  "secrets": [
+    {
+      "name": "VITE_GOOGLE_SCRIPT_URL",
+      "description": "Google Apps Script Web App URL — create a Google Sheet, add the Apps Script that accepts POST requests and appends rows, deploy as a Web App, and paste the /exec URL here",
+      "requiredAtBoot": false
+    }
+  ]
 }
