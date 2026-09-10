@@ -270,40 +270,68 @@ video {
   -webkit-overflow-scrolling: touch;
 }
 
-/* Card Container (Keep this from before, just remove flex rules if any) */
+/* Card Container */
 .service-card {
   position: relative;
   border-radius: 12px;
   overflow: hidden;
   height: 100%;
-  /* Spans the full height of its grid row cell */
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
 }
 
 .service-card .card-img {
   width: 100%;
-  height: 70%;
+  flex: 1;
+  min-height: 0;
   object-fit: cover;
   transition: transform 0.3s ease;
 }
 
-.service-card h5{
-  /* transform: scale(1.05); */
-  font-weight:500 ;
-  color: var(--gold);
-  align-items: center;
+.service-card .card-overlay {
+  position: relative;
+  width: 100%;
+  padding: 14px 12px;
+  text-align: center;
+  background: var(--cream);
+  transition: all 0.3s ease;
+  z-index: 2;
 }
 
-.service-card .card-content {
+.service-card .card-content h5 {
+  font-weight: 500;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+
+.service-card .card-content p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.4;
+  transition: color 0.3s ease;
+}
+
+/* Hover: text overlays the image */
+.service-card:hover .card-overlay {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  padding: 5px 10px;
-  background: rgba(0, 0, 0, 0);
-  color: var(--ink);
-  text-align: center;
-  opacity:1 ;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.65);
+}
+
+.service-card:hover .card-content h5 {
+  color: var(--white);
+}
+
+.service-card:hover .card-content p {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.service-card:hover .card-img {
+  transform: scale(1.05);
 }
 
 /* Optional: Custom scrollbar styles */
