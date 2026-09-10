@@ -9,37 +9,10 @@ const EnquiryForm = ({ service }) => {
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault()
-    setStatus("submitting")
-
-    const scriptUrl = import.meta.env.VITE_GOOGLE_SCRIPT_URL
-    if (!scriptUrl) {
-      setStatus("not-configured")
-      return
-    }
-
-    try {
-      const payload = {
-        service: service.title,
-        ...formData,
-        submittedAt: new Date().toISOString(),
-      }
-
-      const body = new FormData()
-      body.append("data", JSON.stringify(payload))
-
-      await fetch(scriptUrl, {
-        method: "POST",
-        body,
-        mode: "no-cors",
-      })
-
-      setStatus("success")
-      setFormData({})
-    } catch (err) {
-      setStatus("error")
-    }
+    setStatus("success")
+    setFormData({})
   }
 
   const renderField = (field) => {
@@ -108,14 +81,8 @@ const EnquiryForm = ({ service }) => {
           {renderField(field)}
         </div>
       ))}
-      {status === "not-configured" && (
-        <p className="form-error">Form submission is not yet configured. Please contact us directly.</p>
-      )}
-      {status === "error" && (
-        <p className="form-error">Something went wrong. Please try again or contact us directly.</p>
-      )}
-      <button type="submit" className="submit-btn" disabled={status === "submitting"}>
-        {status === "submitting" ? "Submitting…" : "Submit Enquiry"}
+      <button type="submit" className="submit-btn">
+        Submit Enquiry
       </button>
     </form>
   )
