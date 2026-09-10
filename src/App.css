@@ -1,0 +1,322 @@
+#root {
+  width: 100%;
+  height: 100%;
+  --navy: #102944;
+  --gold: #c79a4a;
+  --cream: #faf8f3;
+  --sand: #f1eadf;
+  --ink: #14273a;
+  --muted: #65717c;
+  --white: #fff
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Playfair Display', serif;
+}
+
+/* HERO */
+.hero-container {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.heroWash {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: linear-gradient(to left, rgba(255, 0, 0, 0), rgba(255, 255, 255, 0.941));
+}
+
+video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.heroCopy {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  text-align: start;
+  width: 40%;
+  margin: 15% 2rem;
+  z-index: 1000;
+}
+
+.heroCopy .star {
+  color: var(--gold);
+}
+
+.heroActions {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.businessbtn {
+  border: 0;
+  padding: 15px 26px;
+  display: flex;
+  gap: 28px;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  background: var(--gold);
+}
+
+.holidaybtn {
+  border: 0;
+  padding: 15px 26px;
+  display: flex;
+  gap: 38px;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  background: var(--navy);
+  color: var(--white);
+}
+
+/* NAVBAR */
+
+.header {
+  height: 78px;
+  padding: 0 5vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 10;
+  color: var(--gold)
+}
+
+.navbar-section {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background: var(--cream);
+  color: var(--navy);
+}
+
+.navbar-section h1 {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--navy);
+  cursor: pointer;
+}
+
+.navbar-section ul {
+  list-style: none;
+  text-align: center;
+}
+
+.navbar-section li {
+  display: inline-block;
+  margin: 0 25px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+
+.accredit {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  position: absolute;
+  top: 70%;
+  left: 0;
+  /* z-index: 1000; */
+  color: var(--navy);
+}
+
+.accredit ul {
+  list-style: none;
+  text-align: center;
+
+}
+
+.accredit li {
+  display: inline-block;
+  margin: 0 13px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* FEATURE */
+
+.feature {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background-color: var(--cream);
+  z-index: -1;
+}
+
+.feature-container {
+  position: relative;
+  width: 50%;
+  height: 100vh;
+  box-sizing: border-box;
+  object-fit: contain;
+}
+
+.featureCopy {
+  position: relative;
+  width: 50%;
+  height: 100vh;
+  margin: 30px 60px;
+  box-sizing: border-box;
+  object-fit: contain;
+  display: flex;
+  flex-direction: column;
+}
+
+.featureCopy h5 {
+  font-size: 28px;
+  color: var(--navy);
+  margin-bottom: 20px;
+
+}
+
+.featureCopy span {
+  font-style: italic;
+  font-size: 18px;
+
+}
+
+.box-shadow {
+  max-width: 80%;
+  border-radius: 14px;
+}
+
+/* SERVICES  */
+
+.services {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  z-index: -1;
+}
+
+.services header {
+  font-style: italic;
+  font-size: 32px;
+  font-weight: 400;
+  color: var(--navy);
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--gold);
+}
+
+.services h2 {
+  color: var(--navy);
+}
+
+/* 2-Row Horizontal Scroll Grid Layout */
+.services-grid {
+  display: grid;
+  /* Creates exactly 2 rows, each 350px tall (matching your card height) */
+  grid-template-rows: repeat(2, 300px);
+  /* Crucial: Forces new cards to fill columns horizontally instead of adding rows */
+  grid-auto-flow: column;
+  /* Sets the fixed width for every card added to the grid */
+  grid-auto-columns: 350px;
+
+  gap: 24px;
+  padding: 20px;
+  font-family: 'Playfair Display', serif;
+
+  /* Enables horizontal scrolling */
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Card Container (Keep this from before, just remove flex rules if any) */
+.service-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  height: 100%;
+  /* Spans the full height of its grid row cell */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.service-card .card-img {
+  width: 100%;
+  height: 70%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.service-card h5{
+  /* transform: scale(1.05); */
+  font-weight:500 ;
+  color: var(--gold);
+  align-items: center;
+}
+
+.service-card .card-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 5px 10px;
+  background: rgba(0, 0, 0, 0);
+  color: var(--ink);
+  text-align: center;
+  opacity:1 ;
+}
+
+/* Optional: Custom scrollbar styles */
+.services-grid::-webkit-scrollbar {
+  height: 8px;
+}
+
+.services-grid::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.services-grid::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
