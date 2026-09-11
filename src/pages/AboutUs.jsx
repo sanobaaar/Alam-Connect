@@ -1,7 +1,6 @@
 import NavBar from "../components/NavBar"
 import missionImg from "../assets/mission.jpg"
 import visionImg from "../assets/vision.jpg"
-import promiseImg from "../assets/promise.jpg"
 
 function AboutUs() {
   return (
@@ -156,14 +155,7 @@ function AboutUs() {
           </p>
         </ValueCard>
 
-        <ValueCard image={promiseImg} icon="♢" title="Our Promise">
-          <p>
-            At Star.com, we combine experience, expertise, and personal service to deliver travel solutions you can
-            trust.
-          </p>
-
-          <p>We don't simply arrange trips—we help create experiences, memories, and journeys that last a lifetime.</p>
-        </ValueCard>
+        
       </section>
     </div>
   )

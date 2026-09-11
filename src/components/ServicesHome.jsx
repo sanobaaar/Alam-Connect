@@ -8,7 +8,8 @@ import customize from "../assets/customize.jpg"
 // import support from "../assets/support.jpg"
 const ServicesHome = () => {
   return (
-    <div class="services-section">
+    <div>
+    <div className="services-section">
       <header>
         <div className="gold-line"></div>
 
@@ -17,6 +18,7 @@ const ServicesHome = () => {
         <i></i>
         <div className="gold-line"></div>
       </header>
+      </div>
       <div class="services-row">
         <div class="square-service">
           <img src={flight} alt="Flights" class="card-img" />
