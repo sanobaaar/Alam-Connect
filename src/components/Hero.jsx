@@ -1,4 +1,5 @@
 import videoBg from "../assets/island.mp4"
+import iata from "../assets/iataa.png"
 import { ArrowRight } from "react-bootstrap-icons"
 
 const Hero = () => {
@@ -30,6 +31,7 @@ const Hero = () => {
             Plan My Holiday <ArrowRight />{" "}
           </button>
         </div>
+        <img className="iata-img" src={iata} alt="IATA Accredited Agent"/>
       </div>
     </div>
   )
