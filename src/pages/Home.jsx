@@ -4,6 +4,7 @@ import ServicesHome from "../components/ServicesHome"
 import StartJourney from "../components/StartJourney"
 import TrustBar from "../components/TrustBar"
 import Statement from "../components/Statement"
+import Footer from "../components/Footer"
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
       <ServicesHome />
       <Statement />
       <StartJourney />
+      <Footer/>
     </div>
   )
 }

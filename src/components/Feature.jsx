@@ -16,6 +16,7 @@ import visaServicesImage from "../assets/visa.jpg"
 const services = [
   {
     number: "01",
+    id: "flights",
     icon: Plane,
     title: "International & Domestic Flights",
     shortTitle: "Flights",
@@ -32,28 +33,9 @@ const services = [
       "Flexible travel arrangements",
     ],
   },
-
   {
     number: "02",
-    icon: Palmtree,
-    title: "Holiday Packages",
-    shortTitle: "Holidays",
-    description:
-      "Take the stress out of planning your next holiday with carefully arranged travel packages designed around your destination, preferences and budget.",
-    details:
-      "From relaxing beach escapes and city breaks to family holidays and memorable international adventures, we can help arrange the essential elements of your trip in one place.",
-    image: holidaysImage,
-    points: [
-      "International holiday packages",
-      "Family & couple holidays",
-      "Beach & luxury escapes",
-      "Sightseeing & activities",
-      "Tailored packages for every budget",
-    ],
-  },
-
-  {
-    number: "03",
+    id: "hotels",
     icon: Hotel,
     title: "Hotel Reservations",
     shortTitle: "Hotels",
@@ -72,7 +54,47 @@ const services = [
   },
 
   {
+    number: "03",
+    id: "visa",
+    icon: FileCheck,
+    title: "Visa Services",
+    shortTitle: "Visa Services",
+    description:
+      "Navigating visa requirements can be complicated. Our visa assistance service helps you understand the process and prepare your application requirements.",
+    details:
+      "Our team can provide guidance on documentation, application requirements and travel-related visa processes based on your intended destination.",
+    image: visaServicesImage,
+    points: [
+      "Visa requirement guidance",
+      "Document checklist assistance",
+      "Application preparation support",
+      "Tourist & business visa assistance",
+      "Travel documentation guidance",
+    ],
+  },
+  {
     number: "04",
+    id: "special",
+
+    icon: Palmtree,
+    title: "Honeymoon & Special Holidays",
+    shortTitle: "Special Packages",
+    description: "Create unforgettable experiences for life's most special occasions.",
+    details:
+      "From relaxing beach escapes and city breaks and memorable international adventures, we can help arrange the essential elements of your trip in one place.",
+    image: holidaysImage,
+    points: [
+      "International holiday packages",
+      "Suited for your needs",
+      "Beach & luxury escapes",
+      "Sightseeing & activities",
+      "Tailored packages for every budget",
+    ],
+  },
+  {
+    number: "05",
+    id: "corporate",
+
     icon: BriefcaseBusiness,
     title: "Corporate Travel",
     shortTitle: "Corporate Travel",
@@ -91,7 +113,9 @@ const services = [
   },
 
   {
-    number: "05",
+    number: "06",
+    id: "group",
+
     icon: Users,
     title: "Group & Family Travel",
     shortTitle: "Group & Family",
@@ -108,9 +132,10 @@ const services = [
       "Coordinated travel arrangements",
     ],
   },
-
   {
-    number: "06",
+    number: "07",
+    id: "custom",
+
     icon: Map,
     title: "Customized Tours",
     shortTitle: "Customized Tours",
@@ -129,21 +154,23 @@ const services = [
   },
 
   {
-    number: "07",
-    icon: FileCheck,
-    title: "Visa Services",
-    shortTitle: "Visa Services",
+    number: "08",
+    id: "holidays",
+
+    icon: Palmtree,
+    title: "Holiday Packages",
+    shortTitle: "Holidays",
     description:
-      "Navigating visa requirements can be complicated. Our visa assistance service helps you understand the process and prepare your application requirements.",
+      "Take the stress out of planning your next holiday with carefully arranged travel packages designed around your destination, preferences and budget.",
     details:
-      "Our team can provide guidance on documentation, application requirements and travel-related visa processes based on your intended destination.",
-    image: visaServicesImage,
+      "From relaxing beach escapes and city breaks to family holidays and memorable international adventures, we can help arrange the essential elements of your trip in one place.",
+    image: holidaysImage,
     points: [
-      "Visa requirement guidance",
-      "Document checklist assistance",
-      "Application preparation support",
-      "Tourist & business visa assistance",
-      "Travel documentation guidance",
+      "International holiday packages",
+      "Family & couple holidays",
+      "Beach & luxury escapes",
+      "Sightseeing & activities",
+      "Tailored packages for every budget",
     ],
   },
 ]
@@ -176,7 +203,7 @@ function Services() {
             your travel needs together in one place.
           </p>
 
-          <Link to="/contact" className="services-hero-button">
+          <Link style={{ textDecoration: "none" }} to="/contact" className="services-hero-button">
             PLAN YOUR JOURNEY
             <span>→</span>
           </Link>
@@ -215,11 +242,7 @@ function Services() {
           const reverse = index % 2 !== 0
 
           return (
-            <section
-              className={`service-section ${reverse ? "service-reverse" : ""}`}
-              key={service.number}
-              id={service.shortTitle.toLowerCase().replace(/[^a-z0-9]+/g, "-")}
-            >
+            <section className={`service-section ${reverse ? "service-reverse" : ""}`} key={service.id} id={service.id}>
               {/* IMAGE */}
 
               <div className="service-image">
@@ -260,13 +283,13 @@ function Services() {
                 {/* BUTTONS */}
 
                 <div className="service-buttons">
-                  <Link to={`/contact?service=${encodeURIComponent(service.title)}`} className="service-enquire">
+                  <Link
+                    style={{ textDecoration: "none" }}
+                    to={`/contact?service=${encodeURIComponent(service.title)}`}
+                    className="service-enquire"
+                  >
                     ENQUIRE NOW
                     <span>→</span>
-                  </Link>
-
-                  <Link to={`/contact?service=${encodeURIComponent(service.title)}`} className="service-more">
-                    MORE INFORMATION
                   </Link>
                 </div>
               </div>
@@ -288,7 +311,7 @@ function Services() {
           <p>Tell us where you want to go and let our travel professionals take care of the details.</p>
         </div>
 
-        <Link to="/contact" className="final-cta-button">
+        <Link style={{ textDecoration: "none" }} to="/contact" className="final-cta-button">
           TALK TO AN EXPERT
           <span>→</span>
         </Link>

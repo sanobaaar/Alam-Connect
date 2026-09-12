@@ -1,6 +1,6 @@
+import Footer from "../components/Footer"
 import NavBar from "../components/NavBar"
-import missionImg from "../assets/mission.jpg"
-import visionImg from "../assets/vision.jpg"
+import Statement from "../components/Statement"
 
 function AboutUs() {
   return (
@@ -92,6 +92,8 @@ function AboutUs() {
         </div>
       </section>
 
+      <Statement />
+
       {/* =========================
           WHY CHOOSE US
       ========================= */}
@@ -135,29 +137,10 @@ function AboutUs() {
           />
         </div>
       </section>
-
-      {/* =========================
-          MISSION / VISION / PROMISE
-      ========================= */}
-
-      <section className="values-section">
-        <ValueCard image={missionImg} icon="⚑" title="Our Mission">
-          <p>
-            At Star.com, our mission is to be the premier travel agency, providing efficient, knowledgeable, and dynamic
-            services. We provide real-time support for our valued customers throughout their journey.
-          </p>
-        </ValueCard>
-
-        <ValueCard image={visionImg} icon="⌁" title="Our Vision">
-          <p>
-            Our vision is to redefine travel by seamlessly blending cutting-edge technology and unparalleled service.
-            Connecting people and destinations with confidence and care.
-          </p>
-        </ValueCard>
-
-        
-      </section>
+      <Footer/>
     </div>
+
+
   )
 }
 
@@ -173,33 +156,6 @@ function WhyCard({ icon, title, text }) {
       <h3>{title}</h3>
 
       <p>{text}</p>
-    </div>
-  )
-}
-
-/* =========================
-   VALUE CARD COMPONENT
-========================= */
-
-function ValueCard({ image, icon, title, children }) {
-  return (
-    <div
-      className="value-card"
-      style={{
-        backgroundImage: `url(${image})`,
-      }}
-    >
-      <div className="value-overlay">
-        <div className="value-icon">{icon}</div>
-
-        <div className="value-content">
-          <h3>{title}</h3>
-
-          <div className="gold-line"></div>
-
-          {children}
-        </div>
-      </div>
     </div>
   )
 }

@@ -1,25 +1,62 @@
+import { useState } from "react"
 import { Link, NavLink } from "react-router-dom"
 
 const NavBar = () => {
+  const [menuOpen, setMenuOpen] = useState(false)
+
+  const closeMenu = () => {
+    setMenuOpen(false)
+  }
+
   return (
-    <div className="header">
-      <Link to="/">
-        {" "}
+    <header className="header">
+      {/* Logo */}
+      <Link to="/" className="logo-link" onClick={closeMenu}>
         <div className="logo">
           <h1>STAR.COM</h1>
           <p>Your Journey, Our Expertise</p>
         </div>
       </Link>
-      <div className="nav-links">
-        <NavLink to="/corporate">Corporate Travel</NavLink>
-        <NavLink to="/holidays">Holidays</NavLink>
-        {/* <NavLink to="/destinations"> Destinations</NavLink> */}
-        <NavLink to="/services"> Services</NavLink>
-        <NavLink to="/about">About Us</NavLink>
-        <NavLink to="/contact">Contact</NavLink>
-      </div>
-      <div></div>
-    </div>
+
+      {/* Desktop / Tablet Navigation */}
+      <nav className={`nav-links ${menuOpen ? "nav-open" : ""}`}>
+        <NavLink to="/corporate" onClick={closeMenu}>
+          Corporate Travel
+        </NavLink>
+
+        <NavLink to="/holiday" onClick={closeMenu}>
+          Holidays
+        </NavLink>
+
+        {/* <NavLink to="/destinations" onClick={closeMenu}>
+          Destinations
+        </NavLink> */}
+
+        <NavLink to="/services" onClick={closeMenu}>
+          Services
+        </NavLink>
+
+        <NavLink to="/about" onClick={closeMenu}>
+          About Us
+        </NavLink>
+
+        <NavLink to="/contact" onClick={closeMenu}>
+          Contact
+        </NavLink>
+      </nav>
+
+      {/* Mobile Menu Button */}
+      <button
+        className={`menu-toggle ${menuOpen ? "active" : ""}`}
+        onClick={() => setMenuOpen(!menuOpen)}
+        aria-label="Toggle navigation menu"
+        aria-expanded={menuOpen}
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </header>
   )
 }
 
