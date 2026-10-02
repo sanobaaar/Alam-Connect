@@ -1,10 +1,10 @@
 import NavBar from "../components/NavBar"
 import Hero from "../components/Hero"
 import ServicesHome from "../components/ServicesHome"
-import TrustBar from "../components/TrustBar"
 import Footer from "../components/Footer"
 import AboutHome from "../components/AboutHome"
 import ContactHome from "../components/ContactHome"
+import WhyUs from "../components/WhyUs"
 
 const Home = () => {
   return (
@@ -12,7 +12,8 @@ const Home = () => {
       <NavBar />
       <Hero />
       <AboutHome />
-      <TrustBar />
+      <WhyUs />
+      {/* <TrustBar /> */}
       <ServicesHome />
       <ContactHome /> <Footer />
     </div>
