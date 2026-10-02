@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import Footer from "../components/Footer"
 import NavBar from "../components/NavBar"
 import Statement from "../components/Statement"
@@ -11,7 +12,7 @@ function AboutUs() {
           HERO SECTION
       ========================= */}
 
-      <section className="about-hero">
+      {/* <section className="about-hero">
         <div className="hero-overlay">
           <div className="hero-content">
             <span className="eyebrow">ABOUT STAR.COM</span>
@@ -28,7 +29,7 @@ function AboutUs() {
             </p>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* =========================
           WELCOME SECTION
@@ -38,21 +39,27 @@ function AboutUs() {
         <div className="welcome-text">
           <span className="section-label">ABOUT US</span>
 
-          <h2>Welcome to Star.com</h2>
+          <h2>Welcome to Alam Connect</h2>
 
           <div className="gold-line"></div>
 
           <p>
-            Star.com, an IATA accredited travel management company, born out of passion for exploration, brings you a
-            diverse range of travel solutions, from airline tickets to tailor-made itineraries and corporate travel
-            services.
+            ALAM CONNECT is a new-generation travel company built on more than three decades of experience in the travel
+            industry. Founded with a passion for exploration and a vision to connect people with the world, we combine
+            fresh ideas, modern travel solutions, and deep industry expertise to deliver seamless and personalized
+            journeys.
           </p>
 
           <p>
-            Our experienced travel professionals understand that every traveler is different. Whether you are planning a
-            relaxing holiday, an exciting international adventure, a business trip, or a family vacation, we provide
-            personalized travel solutions designed around your needs, preferences, and budget.
+            Our corporate travel expertise enables us to understand the unique demands of modern business travel—where
+            efficiency, flexibility, cost control, timely support, and attention to detail matter. From executive travel
+            and business trips to group movements, meetings, incentives, conferences, and corporate events, our team
+            provides end-to-end travel management designed around the needs of each client.
           </p>
+
+          <Link style={{ textDecoration: "none" }} className="journey-cta-button" to="/about">
+            About Us
+          </Link>
         </div>
 
         {/* STATS */}
@@ -137,10 +144,8 @@ function AboutUs() {
           />
         </div>
       </section>
-      <Footer/>
+      <Footer />
     </div>
-
-
   )
 }
 

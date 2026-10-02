@@ -1,21 +1,20 @@
 import NavBar from "../components/NavBar"
 import Hero from "../components/Hero"
 import ServicesHome from "../components/ServicesHome"
-import StartJourney from "../components/StartJourney"
 import TrustBar from "../components/TrustBar"
-import Statement from "../components/Statement"
 import Footer from "../components/Footer"
+import AboutHome from "../components/AboutHome"
+import ContactHome from "../components/ContactHome"
 
 const Home = () => {
   return (
     <div>
       <NavBar />
       <Hero />
+      <AboutHome />
       <TrustBar />
       <ServicesHome />
-      <Statement />
-      <StartJourney />
-      <Footer/>
+      <ContactHome /> <Footer />
     </div>
   )
 }

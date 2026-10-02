@@ -287,6 +287,7 @@ function Services() {
                     style={{ textDecoration: "none" }}
                     to={`/contact?service=${encodeURIComponent(service.title)}`}
                     className="service-enquire"
+                    onClick={() => window.scrollTo(0, 0)}
                   >
                     ENQUIRE NOW
                     <span>→</span>

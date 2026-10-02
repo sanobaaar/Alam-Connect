@@ -13,35 +13,27 @@ const NavBar = () => {
       {/* Logo */}
       <Link to="/" className="logo-link" onClick={closeMenu}>
         <div className="logo">
-          <h1>STAR.COM</h1>
+          <h1>Alam Connect</h1>
           <p>Your Journey, Our Expertise</p>
         </div>
       </Link>
 
       {/* Desktop / Tablet Navigation */}
       <nav className={`nav-links ${menuOpen ? "nav-open" : ""}`}>
-        <NavLink to="/corporate" onClick={closeMenu}>
-          Corporate Travel
-        </NavLink>
-
-        <NavLink to="/holiday" onClick={closeMenu}>
-          Holidays
-        </NavLink>
-
-        {/* <NavLink to="/destinations" onClick={closeMenu}>
-          Destinations
-        </NavLink> */}
-
-        <NavLink to="/services" onClick={closeMenu}>
-          Services
+        <NavLink to="/" onClick={closeMenu}>
+          Home
         </NavLink>
 
         <NavLink to="/about" onClick={closeMenu}>
           About Us
         </NavLink>
 
+        <NavLink to="/services" onClick={closeMenu}>
+          Services
+        </NavLink>
+
         <NavLink to="/contact" onClick={closeMenu}>
-          Contact
+          Contact Us
         </NavLink>
       </nav>
 

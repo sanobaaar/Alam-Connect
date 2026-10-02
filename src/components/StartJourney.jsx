@@ -27,7 +27,12 @@ function StartJourney() {
         </div>
 
         {/* BUTTON */}
-        <Link to="/contact" style={{ textDecoration: "none" }} className="journey-cta-button">
+        <Link
+          onClick={() => window.scrollTo(0, 0)}
+          to="/contact"
+          style={{ textDecoration: "none" }}
+          className="journey-cta-button"
+        >
           <span>CONTACT US TODAY</span>
 
           <span className="journey-arrow">›</span>
