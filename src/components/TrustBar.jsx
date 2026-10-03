@@ -1,12 +1,8 @@
-import { Award, BadgeCheck, Headphones, Users, ShieldCheck } from "lucide-react"
+import {  BadgeCheck, Headphones,  ShieldCheck } from "lucide-react"
 
 
 const trustItems = [
-  {
-    icon: Award,
-    title: "30+",
-    subtitle: "Years of Experience",
-  },
+  
   {
     icon: BadgeCheck,
     title: "IATA",
@@ -17,11 +13,7 @@ const trustItems = [
     title: "24/7",
     subtitle: "Real-Time Support",
   },
-  {
-    icon: Users,
-    title: "Personalized",
-    subtitle: "Travel Solutions",
-  },
+ 
   {
     icon: ShieldCheck,
     title: "Reliable",

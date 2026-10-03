@@ -5,15 +5,16 @@ import Footer from "../components/Footer"
 import AboutHome from "../components/AboutHome"
 import ContactHome from "../components/ContactHome"
 import WhyUs from "../components/WhyUs"
+import TrustBar from "../components/TrustBar"
 
 const Home = () => {
   return (
     <div>
       <NavBar />
       <Hero />
+      <TrustBar />
       <AboutHome />
       <WhyUs />
-      {/* <TrustBar /> */}
       <ServicesHome />
       <ContactHome /> <Footer />
     </div>

@@ -4,9 +4,6 @@ const AboutHome = () => {
   return (
     <section className="abouthome-section">
       {/* CENTERED SECTION HEADING */}
-      <div className="abouthome-header">
-        <h2>About Us</h2>
-      </div>
 
       {/* MAIN ABOUT CARD */}
       <div className="abouthome-card">
@@ -21,6 +18,7 @@ const AboutHome = () => {
 
         {/* CONTENT — RIGHT */}
         <div className="about-text">
+          <h5>About Us</h5>
           <h3>
             Travel with experience.
             <br />

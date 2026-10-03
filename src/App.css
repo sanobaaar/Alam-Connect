@@ -22,6 +22,29 @@ html {
   scroll-behavior: auto;
 }
 
+/* Prevent horizontal scrolling on mobile */
+html,
+body,
+#root {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img,
+video,
+svg {
+  max-width: 100%;
+}
+
 
 * {
   margin: 0;
@@ -296,7 +319,7 @@ html {
   }
 
   .heroCopy {
-    width: 88%;
+    width: 100%;
   }
 
   .hero-heading h1 {
@@ -317,7 +340,7 @@ html {
   }
 
   .heroCopy {
-    width: 88%;
+    width: 100%;
 
     padding-top: 60px;
   }
@@ -362,16 +385,10 @@ html {
     so text remains readable.
   */
 
-  .heroWash {
-    background:
-      linear-gradient(90deg,
-        rgba(243, 242, 242, 0.958) 0%,
-        rgba(242, 242, 242, 0.755) 45%,
-        rgba(0, 0, 0, 0.18) 100%);
-  }
+
 
   .heroCopy {
-    width: 90%;
+    width: 100%;
 
     padding-top: 70px;
     padding-bottom: 60px;
@@ -436,22 +453,16 @@ html {
     centered overlay.
   */
 
-  .heroWash {
-    background:
-      linear-gradient(90deg,
-        rgba(243, 242, 242, 0.958) 0%,
-        rgba(242, 242, 242, 0.755) 45%,
-        rgba(0, 0, 0, 0.18) 100%);
-  }
+
 
   .heroCopy {
-    width: 88%;
+    width: 100%;
 
     margin: 12px;
 
-    padding-top: 120px;
+    margin-top: 120px;
 
-    text-align: left;
+    text-align: center;
   }
 
   .hero-heading h1 {
@@ -853,6 +864,7 @@ html {
     visibility: visible;
 
     transform: translateY(0);
+    background-color: var(--v);
   }
 
   .nav-links a {
@@ -863,6 +875,8 @@ html {
     font-size: 15px;
 
     border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+
+    color: var(--gold);
   }
 
   .nav-links a:last-child {
@@ -1382,9 +1396,9 @@ html {
 
 .square-service {
   width: 100%;
-  background: var(--white);
+  background: transparent;
 
-  border: 1px solid rgba(16, 41, 68, 0.08);
+  border: 1px solid var(--gold);
 
   overflow: hidden;
 
@@ -1449,7 +1463,7 @@ html {
 .card-content {
   padding: 20px 20px 23px;
 
-  background: var(--white);
+  background: transparent;
 
   /* min-height: 145px; */
 
@@ -1519,7 +1533,7 @@ html {
   }
 
   .services-header>span {
-    font-size: 11px;
+    font-size: 14px;
     letter-spacing: 2.5px;
   }
 
@@ -1798,7 +1812,12 @@ html {
   color: var(--gold);
 }
 
-
+.about-text h5 {
+  margin-bottom: 20px;
+  color: var(--navy);
+  font-size: 26px;
+  
+}
 /* ACCENT LINE */
 
 .about-accent-line {
@@ -2164,7 +2183,7 @@ html {
 
 .why-section {
   width: 100%;
-  padding: 100px 7%;
+  padding: 50px;
   box-sizing: border-box;
 
   background: var(--navy);
@@ -2321,8 +2340,9 @@ html {
   }
 
   .why-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1px;
+    display: flex;
+    flex-direction: row;
+
   }
 
   .why-card {
@@ -2346,7 +2366,10 @@ html {
   }
 
   .why-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 35px;
   }
 
   .why-card {
@@ -2471,8 +2494,8 @@ html {
 
   /* WHY CHOOSE */
   .why-section {
-    margin-left: 25px;
-    margin-right: 25px;
+    /* margin-left: 25px;
+    margin-right: 25px; */
     padding: 25px;
   }
 
@@ -2571,10 +2594,7 @@ html {
 
 
   /* WHY CHOOSE */
-  .why-section {
-    margin: 0 20px 20px;
-    padding: 25px 20px 30px;
-  }
+
 
   .why-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -2693,9 +2713,8 @@ html {
 
   /* WHY CHOOSE */
   .why-section {
-    margin: 0 12px 20px;
+
     padding: 25px 12px;
-    border-radius: 12px;
   }
 
   .section-heading {
@@ -2817,8 +2836,7 @@ html {
 
 
   .why-section {
-    margin-left: 8px;
-    margin-right: 8px;
+
     padding: 22px 10px;
   }
 
@@ -3216,7 +3234,7 @@ html {
   margin: 0 auto;
 
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(3, 1fr);
 
   align-items: center;
   background: rgba(--navy);
@@ -3541,7 +3559,7 @@ html {
 
 .home-contact-image {
   position: relative;
-  min-height: 650px;
+  min-height: 550px;
   overflow: hidden;
 }
 
@@ -3942,7 +3960,7 @@ html {
   }
 
   .home-contact-image {
-    min-height: 500px;
+    min-height: 400px;
   }
 
   .home-contact-form {
@@ -3963,12 +3981,12 @@ html {
 @media (max-width: 600px) {
 
   .home-contact-image {
-    min-height: 560px;
+    min-height: 760px;
   }
 
   .home-contact-content {
     left: 7%;
-    bottom: 8%;
+    bottom: 14%;
 
     width: 86%;
   }
@@ -3994,7 +4012,7 @@ html {
 
     margin: -50px auto 50px;
 
-    padding: 30px 22px;
+    padding: 50px 22px;
   }
 
   .home-form-row {
