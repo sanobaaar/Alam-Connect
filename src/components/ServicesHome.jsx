@@ -175,7 +175,6 @@ const ServicesHome = () => {
             &#8592;
           </button>
 
-          <span className="carousel-caption">EXPLORE OUR SERVICES</span>
 
           <button type="button" className="carousel-arrow" aria-label="Next services" onClick={() => moveCarousel(1)}>
             &#8594;

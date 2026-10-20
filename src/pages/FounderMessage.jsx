@@ -231,7 +231,7 @@ const FounderMessage = () => {
 
             <p className="founder-signoff">The journey continues — and the best is yet to come.</p>
 
-            <span className="founder-signature">Founder, Alam Connect</span>
+            <span className="founder-signature">Founder, Shadab Alam</span>
           </div>
         </section>
         <Footer />

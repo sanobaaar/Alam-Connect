@@ -125,7 +125,7 @@ export default function About() {
 
             <div className="about-intro-copy">
               <p>
-                ALAM CONNECT is a new-generation travel company built on more than three decades of experience in the
+                ALAM CONNECT is a new-generation travel company built on more than four decades of experience in the
                 travel industry. Founded with a passion for exploration and a vision to connect people with the world,
                 we combine fresh ideas, modern travel solutions, and deep industry expertise to deliver seamless and
                 personalised journeys.

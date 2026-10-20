@@ -17,7 +17,7 @@ const AboutHome = () => {
 
           <div className="abouthome-description">
             <p>
-              ALAM CONNECT is a new-generation travel company built on more than three decades of experience in the
+              ALAM CONNECT is a new-generation travel company built on more than four decades of experience in the
               travel industry. We combine fresh ideas, modern travel solutions, and deep industry expertise to create
               seamless journeys.
             </p>
