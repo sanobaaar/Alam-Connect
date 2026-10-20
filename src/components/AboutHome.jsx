@@ -1,81 +1,48 @@
-import videoAbout from "../assets/abouthome.mp4"
+import { Link } from "react-router-dom"
+
+import mainTravelImage from "../assets/holiday.jpg"
+import secondaryTravelImage from "../assets/startjourney.jpg"
 
 const AboutHome = () => {
   return (
     <section className="abouthome-section">
-      {/* CENTERED SECTION HEADING */}
+      <div className="abouthome-container">
+        {/* LEFT: TEXT CONTENT */}
+        <div className="abouthome-content">
+          <span className="abouthome-eyebrow">ABOUT US</span>
 
-      {/* MAIN ABOUT CARD */}
-      <div className="abouthome-card">
-        {/* VIDEO — LEFT */}
-        <div className="about-video">
-          <video autoPlay loop muted playsInline src={videoAbout}></video>
+          <h2 className="abouthome-heading">
+            We are experts in travel that is individual, inspired <span>&amp; imaginative</span>
+          </h2>
 
-          {/* <div className="about-video-label">
-            <span>OUR STORY</span>
-          </div> */}
+          <div className="abouthome-description">
+            <p>
+              ALAM CONNECT is a new-generation travel company built on more than three decades of experience in the
+              travel industry. We combine fresh ideas, modern travel solutions, and deep industry expertise to create
+              seamless journeys.
+            </p>
+
+            <p>
+              From executive travel and business trips to family holidays and unforgettable escapes, we tailor every
+              journey to your needs, with personal attention and support at every step.
+            </p>
+          </div>
+
+          <Link to="/about" className="abouthome-button">
+            <span>LEARN MORE</span>
+            <span className="abouthome-button-arrow">↗</span>
+          </Link>
         </div>
 
-        {/* CONTENT — RIGHT */}
-        <div className="about-text">
-          <h5>About Us</h5>
-          <h3>
-            Travel with experience.
-            <br />
-            <span>Travel with confidence.</span>
-          </h3>
+        {/* RIGHT: OVERLAPPING TRAVEL IMAGES */}
+        <div className="abouthome-visual">
+          <div className="abouthome-image-main">
+            <img src={mainTravelImage} alt="A beautiful destination for a memorable journey" />
+          </div>
 
-          <div className="about-accent-line"></div>
-
-          <p>
-            ALAM CONNECT is a new-generation travel company built on more than three decades of experience in the travel
-            industry. Founded with a passion for exploration and a vision to connect people with the world, we combine
-            fresh ideas, modern travel solutions, and deep industry expertise to deliver seamless and personalized
-            journeys.
-          </p>
-
-          <p>
-            Our corporate travel expertise enables us to understand the unique demands of modern business travel—where
-            efficiency, flexibility, cost control, timely support, and attention to detail matter.
-          </p>
-
-          <p>
-            From executive travel and business trips to group movements, meetings, incentives, conferences, and
-            corporate events, our team provides end-to-end travel management designed around the needs of each client.
-          </p>
-
-          {/* <div className="about-bottom">
-            <div className="about-experience">
-              <strong>30+</strong>
-              <span>
-                Years of
-                <br />
-                Experience
-              </span>
-            </div>
-
-            <div className="about-divider"></div>
-
-            <div className="about-experience">
-              <strong>360°</strong>
-              <span>
-                Travel
-                <br />
-                Solutions
-              </span>
-            </div>
-
-            <div className="about-divider"></div>
-
-            <div className="about-experience">
-              <strong>IATA</strong>
-              <span>
-                Accredited
-                <br />
-                Agency
-              </span>
-            </div>
-          </div>*/}
+          <div className="abouthome-image-secondary">
+            <img src={secondaryTravelImage} alt="Scenic architecture and travel inspiration" />
+          </div>
         </div>
       </div>
     </section>

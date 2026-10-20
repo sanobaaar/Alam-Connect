@@ -5,18 +5,20 @@ import Footer from "../components/Footer"
 import AboutHome from "../components/AboutHome"
 import ContactHome from "../components/ContactHome"
 import WhyUs from "../components/WhyUs"
-import TrustBar from "../components/TrustBar"
 
 const Home = () => {
   return (
-    <div>
-      <NavBar />
-      <Hero />
-      <TrustBar />
+    <div className="home-page">
+      <div className="hero-wrapper">
+        <NavBar />
+        <Hero />
+      </div>
+
       <AboutHome />
       <WhyUs />
       <ServicesHome />
-      <ContactHome /> <Footer />
+      <ContactHome />
+      <Footer />
     </div>
   )
 }

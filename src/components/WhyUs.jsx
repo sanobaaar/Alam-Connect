@@ -19,7 +19,7 @@ const WhyUs = () => {
         <div className="why-grid">
           <WhyCard
             icon={<Award />}
-            title="30+ Years of Travel Industry Experience"
+            title="40+ Years of Travel Industry Experience"
             text="Decades of industry experience have given us the knowledge, relationships, and expertise to make your travel planning simple and reliable."
           />
 

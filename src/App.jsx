@@ -10,12 +10,15 @@ import Corporate from "./pages/Corporate"
 import Holidays from "./pages/Holidays"
 import Services from "./pages/Services"
 import Contact from "./pages/Contact"
+import Message from "./pages/FounderMessage"
 
 function App() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<AboutUs />} />
+      <Route path="/message" element={<Message />} />
+
       <Route path="/corporate" element={<Corporate />} />
       <Route path="/holiday" element={<Holidays />} />
       <Route path="/services" element={<Services />} />

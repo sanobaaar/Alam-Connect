@@ -1,16 +1,19 @@
 import { useState } from "react"
-import { Plane, Mail, Phone } from "lucide-react"
+import { ArrowUpRight, Plane } from "lucide-react"
+
 import contactImage from "../assets/holiday.jpg"
+import secondaryImage from "../assets/family.jpg"
+
+const initialFormData = {
+  name: "",
+  email: "",
+  phone: "",
+  enquiryType: "",
+  message: "",
+}
 
 const ContactHome = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    enquiryType: "",
-    message: "",
-  })
-
+  const [formData, setFormData] = useState(initialFormData)
   const [submitted, setSubmitted] = useState(false)
 
   const handleChange = e => {
@@ -20,88 +23,69 @@ const ContactHome = () => {
       ...previous,
       [name]: value,
     }))
+
+    setSubmitted(false)
   }
 
   const handleSubmit = e => {
     e.preventDefault()
 
+    // Connect your email service or backend here.
     console.log("Homepage enquiry:", formData)
 
     setSubmitted(true)
-
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      enquiryType: "",
-      message: "",
-    })
+    setFormData({ ...initialFormData })
   }
 
   return (
-    <section className="home-contact">
-      {/* =========================
-          BACKGROUND / LEFT SIDE
-      ========================= */}
+    <section className="home-contact" id="contact">
+      {/* LEFT: Overlapping editorial image composition */}
+      <div className="home-contact-visual">
+        <div className="contact-image-main">
+          <img src={secondaryImage} alt="Discover your next travel destination" loading="lazy" />
+        </div>
 
-      <div className="home-contact-image">
-        <img src={contactImage} alt="Travel destination" />
+        <div className="contact-image-secondary">
+          <img src={contactImage} alt="Memorable travel experiences" loading="lazy" />
+        </div>
 
-        <div className="home-contact-overlay"></div>
-
-        <div className="home-contact-content">
-          <span className="home-contact-eyebrow">LET'S PLAN YOUR JOURNEY</span>
-
-          <h2>
-            Wherever You're Going,
-            <br />
-            <span>We'll Get You There.</span>
-          </h2>
-
-          <div className="home-contact-line"></div>
-
+        <div className="contact-floating-note">
+          <span className="contact-note-mark">“</span>
           <p>
-            From business travel and family holidays to customized journeys, our travel experts are here to make every
-            trip simple and seamless.
+            See more of the world.
+            <br />
+            Make more of every moment.
           </p>
-
-          <div className="home-contact-details">
-            <div>
-              <Phone />
-              <span>Speak With Us</span>
-            </div>
-
-            <div>
-              <Mail />
-              <span>Send An Enquiry</span>
-            </div>
-          </div>
         </div>
       </div>
 
-      {/* =========================
-          CONTACT FORM / RIGHT SIDE
-      ========================= */}
-
+      {/* RIGHT: Contact form */}
       <div className="home-contact-form">
         <div className="home-form-heading">
-          <div className="home-form-icon">
-            <Plane />
-          </div>
+          <span className="home-form-eyebrow">LET'S CONNECT</span>
 
-          <div>
-            <span>GET IN TOUCH</span>
-            <h3>Tell Us About Your Trip</h3>
-          </div>
+          <h2>
+            Where will
+            <br />
+            life <em>take you?</em>
+          </h2>
+
+          <p>
+            Every great journey starts with a conversation. Tell us what you have in mind, and let’s plan something
+            worth looking forward to.
+          </p>
         </div>
 
-        {submitted && <div className="home-success">Thank you! We'll be in touch shortly.</div>}
+        {submitted && (
+          <div className="home-success" role="status">
+            Thank you for your enquiry. We look forward to helping you plan your next journey.
+          </div>
+        )}
 
         <form onSubmit={handleSubmit}>
           <div className="home-form-row">
             <div className="home-form-group">
-              <label htmlFor="home-name">Your Name *</label>
-
+              <label htmlFor="home-name">FULL NAME *</label>
               <input
                 id="home-name"
                 name="name"
@@ -109,13 +93,13 @@ const ContactHome = () => {
                 placeholder="Your name"
                 value={formData.name}
                 onChange={handleChange}
+                autoComplete="name"
                 required
               />
             </div>
 
             <div className="home-form-group">
-              <label htmlFor="home-email">Email *</label>
-
+              <label htmlFor="home-email">EMAIL ADDRESS *</label>
               <input
                 id="home-email"
                 name="email"
@@ -123,6 +107,7 @@ const ContactHome = () => {
                 placeholder="you@example.com"
                 value={formData.email}
                 onChange={handleChange}
+                autoComplete="email"
                 required
               />
             </div>
@@ -130,8 +115,7 @@ const ContactHome = () => {
 
           <div className="home-form-row">
             <div className="home-form-group">
-              <label htmlFor="home-phone">Phone</label>
-
+              <label htmlFor="home-phone">PHONE NUMBER</label>
               <input
                 id="home-phone"
                 name="phone"
@@ -139,45 +123,49 @@ const ContactHome = () => {
                 placeholder="+1 000 000 0000"
                 value={formData.phone}
                 onChange={handleChange}
+                autoComplete="tel"
               />
             </div>
 
             <div className="home-form-group">
-              <label htmlFor="home-enquiryType">I'm Interested In</label>
-
+              <label htmlFor="home-enquiryType">SERVICE</label>
               <select id="home-enquiryType" name="enquiryType" value={formData.enquiryType} onChange={handleChange}>
-                <option value="">Select a service</option>
-                <option value="flights">Flights</option>
-                <option value="hotels">Hotel Reservations</option>
-                <option value="visa">Visa Assistance</option>
-                <option value="corporate">Corporate Travel</option>
-                <option value="group">Group Travel & MICE</option>
-                <option value="pilgrimage">Pilgrimage Travel</option>
-                <option value="custom">Tailor-Made Travel</option>
-                <option value="transfers">Transfers & Car Rental</option>
+                <option value="">Choose a service</option>
+                <option value="flights">Flight bookings</option>
+                <option value="hotels">Hotel reservations</option>
+                <option value="visa">Visa assistance</option>
+                <option value="corporate">Corporate travel</option>
+                <option value="group">Group travel & MICE</option>
+                <option value="pilgrimage">Pilgrimage travel</option>
+                <option value="custom">Tailor-made holidays</option>
+                <option value="transfers">Transfers & car rental</option>
               </select>
             </div>
           </div>
 
           <div className="home-form-group">
-            <label htmlFor="home-message">How Can We Help?</label>
-
+            <label htmlFor="home-message">TELL US ABOUT YOUR TRIP</label>
             <textarea
               id="home-message"
               name="message"
-              rows="4"
-              placeholder="Tell us about your destination, dates or travel requirements..."
+              rows={3}
+              placeholder="Destinations, dates, or ideas you have in mind..."
               value={formData.message}
               onChange={handleChange}
             />
           </div>
 
           <button type="submit" className="home-contact-submit">
-            <span>SEND ENQUIRY</span>
-            <span>→</span>
+            <span>Send an enquiry</span>
+            <span className="home-submit-icon">
+              <ArrowUpRight size={19} strokeWidth={1.7} />
+            </span>
           </button>
 
-          <p className="home-form-note">Our travel team will get back to you with personalized options.</p>
+          <p className="home-form-note">
+            <Plane size={15} strokeWidth={1.5} />
+            <span>40+ years of experience. A personal touch at every step.</span>
+          </p>
         </form>
       </div>
     </section>

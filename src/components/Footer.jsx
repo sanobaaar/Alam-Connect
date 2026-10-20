@@ -1,78 +1,119 @@
 import { Link } from "react-router-dom"
-import { Facebook, Instagram, Linkedin, Whatsapp } from "react-bootstrap-icons"
+import { Facebook, Instagram, Linkedin, Whatsapp, ArrowUpRight } from "react-bootstrap-icons"
 
 const Footer = () => {
+  const year = new Date().getFullYear()
+
   return (
     <footer className="site-footer">
+      {/* Top brand statement */}
+      <div className="footer-intro">
+        <div className="footer-intro-copy">
+          <span className="footer-eyebrow">ALAM CONNECT · EST. IN TRAVEL</span>
+          <h2>
+            The world is closer
+            <br />
+            <em>than you think.</em>
+          </h2>
+        </div>
+
+        <Link to="/contact" className="footer-cta">
+          <span>Let's plan your journey</span>
+          <ArrowUpRight size={19} />
+        </Link>
+      </div>
+
+      <div className="footer-divider" />
+
+      {/* Main footer columns */}
       <div className="footer-main">
-        {/* BRAND */}
         <div className="footer-brand">
           <Link to="/" className="footer-logo">
-            Alam Connect
+            Alam Connect<span>.</span>
           </Link>
 
           <p className="footer-tagline">Your Journey, Our Expertise.</p>
 
           <p className="footer-description">
-            Personalized travel solutions for businesses, families, and individuals worldwide.
+            Thoughtful travel solutions for businesses, families, and individuals — connecting people to the places that
+            matter.
           </p>
+
+          <div className="footer-experience">
+            <span className="footer-experience-number">40+</span>
+            <span>
+              Years of experience
+              <br />
+              in travel
+            </span>
+          </div>
         </div>
 
-        {/* QUICK LINKS */}
         <div className="footer-links">
-          <h4>Explore</h4>
-
+          <h4>EXPLORE</h4>
           <div className="footer-link-list">
             <Link to="/">Home</Link>
-            <Link to="/about">About</Link>
-            <Link to="/services">Services</Link>
+            <Link to="/about">About Us</Link>
+            <Link to="/services">Our Services</Link>
             <Link to="/contact">Contact</Link>
           </div>
         </div>
 
-        {/* CONTACT */}
         <div className="footer-contact">
-          <h4>Contact</h4>
+          <h4>GET IN TOUCH</h4>
 
-          <a href="mailto:info@alamconnect.com">info@alamconnect.com</a>
+          <a href="mailto:info@alamconnect.com">
+            info@alamconnect.com
+            <ArrowUpRight size={14} />
+          </a>
 
-          <a href="tel:+16040000000">+1 604 000 0000</a>
+          <a href="tel:+16040000000">
+            +1 604 000 0000
+            <ArrowUpRight size={14} />
+          </a>
 
-          <span>Vancouver, BC, Canada</span>
+          <p>Vancouver, British Columbia</p>
+          <p>Canada</p>
         </div>
 
-        {/* SOCIAL */}
         <div className="footer-social">
-          <h4>Follow Us</h4>
+          <h4>STAY CONNECTED</h4>
+
+          <p>Wherever you're headed, we'd love to be part of your journey.</p>
 
           <div className="footer-socials">
-            <a href="#" aria-label="Facebook">
+            <a href="https://www.facebook.com/" target="_blank" rel="noreferrer" aria-label="Facebook">
               <Facebook />
             </a>
 
-            <a href="#" aria-label="Instagram">
+            <a href="https://www.instagram.com/" target="_blank" rel="noreferrer" aria-label="Instagram">
               <Instagram />
             </a>
 
-            <a href="#" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
               <Linkedin />
             </a>
 
-            <a href="#" aria-label="WhatsApp">
+            <a href="https://www.whatsapp.com/" target="_blank" rel="noreferrer" aria-label="WhatsApp">
               <Whatsapp />
             </a>
           </div>
         </div>
       </div>
 
-      {/* BOTTOM BAR */}
+      {/* Bottom bar */}
       <div className="footer-bottom">
-        <p>© {new Date().getFullYear()} Alam Connect. All rights reserved.</p>
+        <p>© {year} Alam Connect. All rights reserved.</p>
 
         <div className="footer-legal">
           <Link to="/privacy">Privacy Policy</Link>
+          <span className="footer-legal-dot">·</span>
           <Link to="/terms">Terms & Conditions</Link>
         </div>
+
+        <a href="#top" className="footer-back-top">
+          Back to top ↑
+        </a>
       </div>
     </footer>
   )

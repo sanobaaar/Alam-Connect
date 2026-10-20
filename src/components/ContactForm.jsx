@@ -1,9 +1,6 @@
 import { useState } from "react"
-// import { Link } from "react-router-dom"
-
-import Navbar from "./NavBar"
-
 import contactImage from "../assets/holiday.jpg"
+import NavBar from "./NavBar"
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -19,8 +16,8 @@ function Contact() {
   })
 
   const [submitted, setSubmitted] = useState(false)
+  const [error, setError] = useState("")
 
-  // Handle field changes
   const handleChange = e => {
     const { name, value } = e.target
 
@@ -28,340 +25,335 @@ function Contact() {
       ...previous,
       [name]: value,
     }))
+
+    setSubmitted(false)
+    setError("")
   }
 
-  // Handle form submission
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault()
+    setError("")
 
-    console.log("Enquiry submitted:", formData)
+    // Connect your form to a form service or backend
+    // before publishing. This local handler does not
+    // send an email by itself.
+    console.log("Alam Connect enquiry:", formData)
 
     setSubmitted(true)
-
-    // Clear form
-    setFormData({
-      firstName: "",
-      lastName: "",
-      email: "",
-      phone: "",
-      enquiryType: "",
-      destination: "",
-      travelDate: "",
-      travellers: "",
-      message: "",
-    })
   }
 
   return (
     <div className="contact-page">
-      <Navbar />
-
-      {/* =====================================
-          CONTACT HERO
-      ===================================== */}
-
+      <div className="hero-wrapper">
+        <NavBar />
+      </div>
+      {/* HERO */}
       <section className="contact-hero">
         <div className="contact-hero-image">
-          <img src={contactImage} alt="Travel destination" />
+          <img src={contactImage} alt="Beautiful travel destination" />
         </div>
 
-        <div className="contact-hero-overlay"></div>
+        <div className="contact-hero-overlay" />
 
         <div className="contact-hero-content">
-          <span className="contact-eyebrow">GET IN TOUCH</span>
+          <span className="contact-eyebrow">LET'S START A CONVERSATION</span>
 
           <h1>
-            Let's Plan Your
+            Your Next Journey,
             <br />
-            <span>Next Journey.</span>
+            <span>Starts Here.</span>
           </h1>
 
-          <div className="contact-gold-line"></div>
+          <div className="contact-accent-line" />
 
           <p>
-            Whether you're planning a business trip, family holiday, or your next adventure, our experienced travel
-            professionals are here to help.
+            Whether you're planning a holiday, arranging business travel, booking flights or exploring visa services,
+            our team is here to help make every journey simpler.
           </p>
 
-          <p>
-            Tell us what you're looking for and we'll get back to you with personalized travel options tailored to your
-            needs.
-          </p>
+          <a href="#enquiry-form" className="contact-hero-button">
+            PLAN YOUR JOURNEY <span>↗</span>
+          </a>
+        </div>
 
-          {/* CONTACT DETAILS */}
-
-          <div className="contact-details">
-            <div className="contact-detail">
-              <div className="contact-detail-icon">☎</div>
-
-              <div>
-                <span>Call Us</span>
-                <strong>+971 4 123 4567</strong>
-              </div>
-            </div>
-
-            <div className="contact-detail">
-              <div className="contact-detail-icon">✉</div>
-
-              <div>
-                <span>Email Us</span>
-                <strong>info@star.com</strong>
-              </div>
-            </div>
-
-            <div className="contact-detail">
-              <div className="contact-detail-icon">⌖</div>
-
-              <div>
-                <span>Travel Support</span>
-                <strong>Available 24/7</strong>
-              </div>
-            </div>
-          </div>
+        <div className="contact-hero-label">
+          <span>01</span> PERSONALIZED TRAVEL SOLUTIONS
         </div>
       </section>
 
-      {/* =====================================
-          ENQUIRY SECTION
-      ===================================== */}
-
-      <section className="contact-section">
-        <div className="contact-intro">
-          <span className="section-eyebrow">TRAVEL WITH CONFIDENCE</span>
+      {/* INTRODUCTION */}
+      <section className="contact-intro-section">
+        <div className="contact-intro-heading">
+          <span className="contact-section-label">WE'RE HERE FOR YOU</span>
 
           <h2>
-            Tell Us About Your
+            Travel expertise.
             <br />
-            Travel Plans
+            <span>Personal attention.</span>
           </h2>
+        </div>
 
-          <div className="contact-gold-line"></div>
-
-          <p>Complete the form and one of our travel experts will contact you to discuss your requirements.</p>
-
+        <div className="contact-intro-copy">
           <p>
-            From flights and hotels to complete holiday packages, corporate travel and customized itineraries, we're
-            here to make your journey simple.
+            At Alam Connect, we combine decades of travel industry experience with a modern, personalized approach to
+            travel planning.
           </p>
 
-          <div className="contact-note">
-            <strong>Why contact Star.com?</strong>
+          <p>
+            Tell us what you have in mind. From a simple flight booking to a complete travel itinerary, we'll help you
+            explore the options that suit your needs.
+          </p>
+        </div>
+      </section>
 
-            <ul>
-              <li>Personalized travel recommendations</li>
-              <li>Experienced travel professionals</li>
-              <li>Competitive travel options</li>
-              <li>Dedicated customer support</li>
-            </ul>
+      {/* SERVICES */}
+      <section className="contact-services">
+        <div className="contact-services-heading">
+          <span className="contact-section-label">HOW CAN WE HELP?</span>
+
+          <h2>One team. Every journey.</h2>
+
+          <p>Tell us what you need and let our travel professionals help you plan your next move.</p>
+        </div>
+
+        <div className="contact-services-grid">
+          <article className="contact-service-card">
+            <span className="service-number">01</span>
+            <div className="service-icon">✈</div>
+            <h3>Flights &amp; Ticketing</h3>
+            <p>Flight reservations, fare options and travel arrangements tailored to your itinerary.</p>
+          </article>
+
+          <article className="contact-service-card">
+            <span className="service-number">02</span>
+            <div className="service-icon">◎</div>
+            <h3>Holiday Packages</h3>
+            <p>Personalized holidays, family getaways and customized itineraries for your next adventure.</p>
+          </article>
+
+          <article className="contact-service-card">
+            <span className="service-number">03</span>
+            <div className="service-icon">▤</div>
+            <h3>Corporate Travel</h3>
+            <p>Professional travel coordination for business trips, teams and corporate requirements.</p>
+          </article>
+
+          <article className="contact-service-card">
+            <span className="service-number">04</span>
+            <div className="service-icon">⌖</div>
+            <h3>Hotels &amp; Travel Services</h3>
+            <p>Hotel reservations, visa assistance and other travel services to help organize your journey.</p>
+          </article>
+        </div>
+      </section>
+
+      {/* ENQUIRY SECTION */}
+      <section className="contact-enquiry-section" id="enquiry-form">
+        <div className="contact-enquiry-info">
+          <span className="contact-section-label">GET IN TOUCH</span>
+
+          <h2>
+            Let's talk about
+            <br />
+            <span>your travel plans.</span>
+          </h2>
+
+          <div className="contact-accent-line" />
+
+          <p>
+            Have a question or need help organizing your next trip? Complete the enquiry form and tell us a little about
+            what you're looking for.
+          </p>
+
+          <div className="contact-info-list">
+            <div className="contact-info-item">
+              <div className="contact-info-icon">✉</div>
+              <div>
+                <span>Email</span>
+                <a href="mailto:info@alamconnect.com">info@alamconnect.com</a>
+              </div>
+            </div>
+
+            <div className="contact-info-item">
+              <div className="contact-info-icon">☎</div>
+              <div>
+                <span>Phone</span>
+                <p>Contact our travel team</p>
+              </div>
+            </div>
+
+            <div className="contact-info-item">
+              <div className="contact-info-icon">◷</div>
+              <div>
+                <span>Personalized Assistance</span>
+                <p>Travel support tailored to your needs</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="contact-info-note">
+            <span>✦</span>
+            Your journey matters to us. Let's plan it together.
           </div>
         </div>
 
-        {/* =====================================
-            FORM
-        ===================================== */}
-
-        <div className="enquiry-card">
-          <div className="form-heading">
-            <h2>Send Us An Enquiry</h2>
-
-            <p>Tell us a little about what you need.</p>
+        {/* FORM */}
+        <div className="contact-form-card">
+          <div className="contact-form-heading">
+            <span>YOUR ENQUIRY</span>
+            <h2>How can we help?</h2>
+            <p>Fields marked * are required.</p>
           </div>
 
           {submitted && (
-            <div className="success-message">
-              Thank you! Your enquiry has been received. Our travel team will contact you shortly.
+            <div className="contact-success" role="status">
+              <strong>Thank you for reaching out!</strong>
+              <p>
+                Your form has been validated in this demo. To deliver your enquiry to Alam Connect, connect this form to
+                an email service or backend.
+              </p>
+            </div>
+          )}
+
+          {error && (
+            <div className="contact-error" role="alert">
+              {error}
             </div>
           )}
 
           <form onSubmit={handleSubmit}>
-            {/* NAME */}
-
-            <div className="form-row">
-              <div className="form-group">
+            <div className="contact-form-row">
+              <div className="contact-form-group">
                 <label htmlFor="firstName">First Name *</label>
-
                 <input
                   id="firstName"
                   name="firstName"
-                  type="text"
-                  placeholder="Enter your first name"
                   value={formData.firstName}
                   onChange={handleChange}
+                  placeholder="Your first name"
+                  autoComplete="given-name"
                   required
                 />
               </div>
 
-              <div className="form-group">
+              <div className="contact-form-group">
                 <label htmlFor="lastName">Last Name *</label>
-
                 <input
                   id="lastName"
                   name="lastName"
-                  type="text"
-                  placeholder="Enter your last name"
                   value={formData.lastName}
                   onChange={handleChange}
+                  placeholder="Your last name"
+                  autoComplete="family-name"
                   required
                 />
               </div>
             </div>
 
-            {/* EMAIL / PHONE */}
-
-            <div className="form-row">
-              <div className="form-group">
+            <div className="contact-form-row">
+              <div className="contact-form-group">
                 <label htmlFor="email">Email Address *</label>
-
                 <input
                   id="email"
                   name="email"
                   type="email"
-                  placeholder="you@example.com"
                   value={formData.email}
                   onChange={handleChange}
+                  placeholder="you@example.com"
+                  autoComplete="email"
                   required
                 />
               </div>
 
-              <div className="form-group">
+              <div className="contact-form-group">
                 <label htmlFor="phone">Phone Number</label>
-
                 <input
                   id="phone"
                   name="phone"
                   type="tel"
-                  placeholder="+971 50 000 0000"
                   value={formData.phone}
                   onChange={handleChange}
+                  placeholder="Your contact number"
+                  autoComplete="tel"
                 />
               </div>
             </div>
 
-            {/* ENQUIRY TYPE */}
-
-            <div className="form-group">
+            <div className="contact-form-group">
               <label htmlFor="enquiryType">What can we help you with? *</label>
 
               <select id="enquiryType" name="enquiryType" value={formData.enquiryType} onChange={handleChange} required>
-                <option value="">Select an enquiry type</option>
-
-                <option value="flights">Flights</option>
-
-                <option value="holiday">Holiday Packages</option>
-
-                <option value="hotel">Hotel Reservations</option>
-
+                <option value="">Choose a service</option>
+                <option value="flights">Flights &amp; Ticketing</option>
+                <option value="holidays">Holiday Packages</option>
+                <option value="hotels">Hotel Reservations</option>
                 <option value="corporate">Corporate Travel</option>
-
-                <option value="group">Group & Family Travel</option>
-
-                <option value="custom">Customized Tours</option>
-
-                <option value="visa">Visa Services</option>
-
-                <option value="other">Other</option>
+                <option value="visa">Visa Assistance</option>
+                <option value="group">Group &amp; Family Travel</option>
+                <option value="custom">Customized Itineraries</option>
+                <option value="other">Other Enquiry</option>
               </select>
             </div>
 
-            {/* DESTINATION / TRAVELLERS */}
-
-            <div className="form-row">
-              <div className="form-group">
-                <label htmlFor="destination">Destination</label>
-
+            <div className="contact-form-row">
+              <div className="contact-form-group">
+                <label htmlFor="destination">Destination / Route</label>
                 <input
                   id="destination"
                   name="destination"
-                  type="text"
-                  placeholder="Where would you like to go?"
                   value={formData.destination}
                   onChange={handleChange}
+                  placeholder="e.g. Dubai to London"
                 />
               </div>
 
-              <div className="form-group">
-                <label htmlFor="travellers">Number of Travellers</label>
-
+              <div className="contact-form-group">
+                <label htmlFor="travellers">Travellers</label>
                 <select id="travellers" name="travellers" value={formData.travellers} onChange={handleChange}>
-                  <option value="">Select</option>
-
-                  <option value="1">1</option>
-
-                  <option value="2">2</option>
-
-                  <option value="3-5">3–5</option>
-
-                  <option value="6-10">6–10</option>
-
-                  <option value="10+">10+</option>
+                  <option value="">Select number</option>
+                  <option value="1">1 traveller</option>
+                  <option value="2">2 travellers</option>
+                  <option value="3-5">3–5 travellers</option>
+                  <option value="6-10">6–10 travellers</option>
+                  <option value="10+">More than 10</option>
                 </select>
               </div>
             </div>
 
-            {/* DATE */}
-
-            <div className="form-row">
-              <div className="form-group">
-                <label htmlFor="travelDate">Preferred Travel Date</label>
-
-                <input
-                  id="travelDate"
-                  name="travelDate"
-                  type="date"
-                  value={formData.travelDate}
-                  onChange={handleChange}
-                />
-              </div>
+            <div className="contact-form-group">
+              <label htmlFor="travelDate">Preferred Travel Date</label>
+              <input
+                id="travelDate"
+                name="travelDate"
+                type="date"
+                value={formData.travelDate}
+                onChange={handleChange}
+              />
             </div>
 
-            {/* MESSAGE */}
-
-            <div className="form-group">
+            <div className="contact-form-group">
               <label htmlFor="message">Tell Us More *</label>
-
               <textarea
                 id="message"
                 name="message"
                 rows="5"
-                placeholder="Tell us about your travel plans, preferred dates, destinations or anything else we should know..."
                 value={formData.message}
                 onChange={handleChange}
+                placeholder="Share your requirements, dates, questions or any other details..."
                 required
               />
             </div>
 
-            {/* SUBMIT */}
-
             <button type="submit" className="contact-submit">
-              <span>SEND ENQUIRY</span>
-
-              <span className="submit-arrow">→</span>
+              <span>SEND YOUR ENQUIRY</span>
+              <span className="contact-submit-arrow">↗</span>
             </button>
 
-            <p className="form-disclaimer">
-              By submitting this form, you agree to be contacted by our travel team regarding your enquiry.
+            <p className="contact-form-disclaimer">
+              Your information should be used only to respond to your enquiry and handled in accordance with the
+              company's privacy practices.
             </p>
           </form>
-        </div>
-      </section>
-
-      {/* =====================================
-          BOTTOM CTA
-      ===================================== */}
-
-      <section className="contact-bottom">
-        <h2>Prefer to speak with us directly?</h2>
-
-        <p>Our travel experts are ready to help.</p>
-
-        <div className="bottom-buttons">
-          <a style={{ textDecoration: "none" }} href="tel:+97141234567" className="bottom-button">
-            ☎ &nbsp; Call Us
-          </a>
-
-          <a style={{ textDecoration: "none" }} href="mailto:info@star.com" className="bottom-button outline">
-            ✉ &nbsp; Email Us
-          </a>
         </div>
       </section>
     </div>
