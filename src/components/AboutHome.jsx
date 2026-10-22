@@ -12,7 +12,7 @@ const AboutHome = () => {
           <span className="abouthome-eyebrow">ABOUT US</span>
 
           <h2 className="abouthome-heading">
-            We are experts in travel that is individual, inspired <span>&amp; imaginative</span>
+            Travel <span> done well</span>
           </h2>
 
           <div className="abouthome-description">

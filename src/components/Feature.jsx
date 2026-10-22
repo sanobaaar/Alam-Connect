@@ -1,324 +1,161 @@
-import { Link } from "react-router-dom"
+import { Plane, Hotel, Stamp, Users, CarFront, Compass, Globe2, BriefcaseBusiness } from "lucide-react"
 
-import { Plane, Palmtree, Hotel, BriefcaseBusiness, Users, Map, FileCheck } from "lucide-react"
-import flightsImage from "../assets/flight.jpg"
-import holidaysImage from "../assets/holiday.jpg"
-import hotelsImage from "../assets/hotel.jpg"
-import corporateImage from "../assets/corporate.jpg"
-import groupTravelImage from "../assets/family.jpg"
-import customizedToursImage from "../assets/customize.jpg"
-import visaServicesImage from "../assets/visa.jpg"
-
-// ============================================
-// SERVICES DATA
-// ============================================
 
 const services = [
   {
     number: "01",
-    id: "flights",
     icon: Plane,
-    title: "International & Domestic Flights",
-    shortTitle: "Flights",
+    title: "Flights",
+    subtitle: "Domestic & International",
     description:
-      "Whether you're travelling for business, leisure or visiting family, we help you find convenient flight options that suit your schedule, destination and budget.",
-    details:
-      "From simple one-way journeys to complex multi-city itineraries, our travel professionals can assist with route planning, airline options, fare selection and travel arrangements.",
-    image: flightsImage,
-    points: [
-      "International & domestic flights",
-      "One-way, return & multi-city itineraries",
-      "Business & economy class options",
-      "Group flight bookings",
-      "Flexible travel arrangements",
-    ],
+      "Seamless air travel solutions with competitive fares, flexible options, and expert assistance for journeys around the world.",
   },
   {
     number: "02",
-    id: "hotels",
     icon: Hotel,
     title: "Hotel Reservations",
-    shortTitle: "Hotels",
     description:
-      "Find comfortable stays that fit your destination, travel style and budget. We help you select accommodation with convenience and value in mind.",
-    details:
-      "Whether you need a business hotel in the city centre, a family-friendly resort or a luxury stay for a special occasion, our team can help you compare suitable options.",
-    image: hotelsImage,
-    points: [
-      "Hotels worldwide",
-      "Business & leisure accommodation",
-      "Family-friendly stays",
-      "Luxury & resort properties",
-      "Accommodation tailored to your trip",
-    ],
+      "From business hotels to luxury resorts, we arrange comfortable stays that match your destination, preferences, and budget.",
   },
-
   {
     number: "03",
-    id: "visa",
-    icon: FileCheck,
-    title: "Visa Services",
-    shortTitle: "Visa Services",
+    icon: Stamp,
+    title: "Visa Assistance",
     description:
-      "Navigating visa requirements can be complicated. Our visa assistance service helps you understand the process and prepare your application requirements.",
-    details:
-      "Our team can provide guidance on documentation, application requirements and travel-related visa processes based on your intended destination.",
-    image: visaServicesImage,
-    points: [
-      "Visa requirement guidance",
-      "Document checklist assistance",
-      "Application preparation support",
-      "Tourist & business visa assistance",
-      "Travel documentation guidance",
-    ],
+      "Simplifying the visa process with professional guidance on documentation, applications, and travel requirements.",
   },
   {
     number: "04",
-    id: "special",
-
-    icon: Palmtree,
-    title: "Honeymoon & Special Holidays",
-    shortTitle: "Special Packages",
-    description: "Create unforgettable experiences for life's most special occasions.",
-    details:
-      "From relaxing beach escapes and city breaks and memorable international adventures, we can help arrange the essential elements of your trip in one place.",
-    image: holidaysImage,
-    points: [
-      "International holiday packages",
-      "Suited for your needs",
-      "Beach & luxury escapes",
-      "Sightseeing & activities",
-      "Tailored packages for every budget",
-    ],
+    icon: Users,
+    title: "Group Travel & MICE",
+    description:
+      "From group tours to corporate meetings, incentives, conferences, and events — we manage every detail for a smooth experience.",
   },
   {
     number: "05",
-    id: "corporate",
-
-    icon: BriefcaseBusiness,
-    title: "Corporate Travel",
-    shortTitle: "Corporate Travel",
+    icon: CarFront,
+    title: "Transfers & Car Rental",
     description:
-      "Keep your business travel organized, efficient and stress-free with professional travel solutions built around your company's requirements.",
-    details:
-      "From executive travel and business flights to accommodation and multi-destination itineraries, we provide coordinated travel support so your team can focus on business.",
-    image: corporateImage,
-    points: [
-      "Business flights & accommodation",
-      "Executive travel arrangements",
-      "Multi-destination itineraries",
-      "Corporate travel coordination",
-      "Dedicated travel support",
-    ],
+      "Reliable airport transfers, chauffeur services, and car rentals to keep your journey comfortable, convenient, and stress-free.",
   },
-
   {
     number: "06",
-    id: "group",
-
-    icon: Users,
-    title: "Group & Family Travel",
-    shortTitle: "Group & Family",
+    icon: Compass,
+    title: "Pilgrimage Travel",
     description:
-      "Travelling with family, friends or a larger group? We coordinate the details so everyone can enjoy a smoother and more comfortable travel experience.",
-    details:
-      "We can assist with group flights, accommodation, transportation and customized itineraries while taking different ages, preferences and requirements into consideration.",
-    image: groupTravelImage,
-    points: [
-      "Family holidays",
-      "Large group bookings",
-      "Group flights & accommodation",
-      "Custom group itineraries",
-      "Coordinated travel arrangements",
-    ],
+      "Thoughtfully planned Umrah, Hajj, and pilgrimage journeys, combining reliable travel arrangements with comfort and peace of mind.",
   },
   {
     number: "07",
-    id: "custom",
-
-    icon: Map,
-    title: "Customized Tours",
-    shortTitle: "Customized Tours",
+    icon: Globe2,
+    title: "Tailor-Made Travel Solutions",
     description:
-      "Your journey doesn't have to follow a standard package. Tell us what you want to experience and we'll help create an itinerary around you.",
-    details:
-      "From destination discovery and sightseeing to transportation, accommodation and activities, our customized travel service gives you the flexibility to create a journey that feels personal.",
-    image: customizedToursImage,
-    points: [
-      "Tailor-made itineraries",
-      "Private & personalized tours",
-      "Multi-city travel",
-      "Sightseeing & experiences",
-      "Flexible travel planning",
-    ],
+      "Every journey is different. We create personalized travel experiences designed around your schedule, interests, preferences, and budget.",
   },
-
   {
     number: "08",
-    id: "holidays",
-
-    icon: Palmtree,
-    title: "Holiday Packages",
-    shortTitle: "Holidays",
+    icon: BriefcaseBusiness,
+    title: "Corporate & Business Travel",
     description:
-      "Take the stress out of planning your next holiday with carefully arranged travel packages designed around your destination, preferences and budget.",
-    details:
-      "From relaxing beach escapes and city breaks to family holidays and memorable international adventures, we can help arrange the essential elements of your trip in one place.",
-    image: holidaysImage,
-    points: [
-      "International holiday packages",
-      "Family & couple holidays",
-      "Beach & luxury escapes",
-      "Sightseeing & activities",
-      "Tailored packages for every budget",
-    ],
+      "Smart and efficient travel solutions for businesses — including flights, accommodation, transfers, visa assistance, and complete corporate travel management.",
   },
 ]
 
-// ============================================
-// SERVICES PAGE
-// ============================================
-
-function Services() {
+export default function Feature() {
   return (
-    <div className="services-page">
-      {/* ======================================
-          HERO
-      ====================================== */}
-
+    <main className="services-page">
+      {/* HERO SECTION */}
       <section className="services-hero">
-        <div className="services-hero-content">
-          <span className="services-eyebrow">OUR SERVICES</span>
+        <div className="services-hero-inner">
+          <span className="services-eyebrow">
+            ALAM CONNECT
+            <span className="eyebrow-line" />
+            TRAVEL SOLUTIONS
+          </span>
 
           <h1>
-            Travel Solutions.
+            Every Journey.
             <br />
-            <span>Made Simple.</span>
+            <span>One Connection.</span>
           </h1>
 
-          <div className="services-gold-line"></div>
-
-          <p>
-            From flights and hotels to complete holidays, corporate travel and personalized journeys, Star.com brings
-            your travel needs together in one place.
+          <p className="services-hero-description">
+            From the first booking to the final destination, we bring every part of your journey together with
+            expertise, care, and confidence.
           </p>
 
-          <Link style={{ textDecoration: "none" }} to="/contact" className="services-hero-button">
-            PLAN YOUR JOURNEY
-            <span>→</span>
-          </Link>
+          <a href="/about" className="contact-hero-button">
+            LEARN MORE ABOUT US <span>↗</span>
+          </a>
+        </div>
+
+        <div className="services-hero-side" aria-hidden="true">
+          <span className="hero-orbit orbit-one" />
+          <span className="hero-orbit orbit-two" />
+
+          <Plane className="hero-plane-icon" strokeWidth={1} />
+
+          <span className="hero-side-label">YOUR WORLD, CONNECTED.</span>
         </div>
       </section>
 
-      {/* ======================================
-          INTRO
-      ====================================== */}
+      {/* INTRODUCTION */}
+      <section className="services-intro" id="our-services">
+        <div>
+          <span className="services-section-label">WHAT WE DO</span>
 
-      <section className="services-intro">
-        <span className="section-eyebrow">HOW WE CAN HELP</span>
+          <h2>Travel made simpler.</h2>
+        </div>
 
-        <h2>
-          Complete Solutions for
-          <br />
-          Every Journey
-        </h2>
-
-        <div className="services-gold-line"></div>
-
-        <p>
-          Every journey is different. That's why we offer a complete range of travel services designed for individuals,
-          families, groups and businesses.
-        </p>
+        <p>Whatever brings you to the world, we provide the travel expertise and support to get you there.</p>
       </section>
 
-      {/* ======================================
-          SERVICE SECTIONS
-      ====================================== */}
+      {/* SERVICES GRID */}
+      <section className="services-grid-section">
+        <div className="services-grid">
+          {services.map(service => {
+            const Icon = service.icon
 
-      <main className="services-list">
-        {services.map((service, index) => {
-          const Icon = service.icon
+            return (
+              <article className="service-card" key={service.number}>
+                <div className="service-card-top">
+                  <div className="service-icon">
+                    <Icon size={25} strokeWidth={1.6} />
+                  </div>
 
-          const reverse = index % 2 !== 0
-
-          return (
-            <section className={`service-section ${reverse ? "service-reverse" : ""}`} key={service.id} id={service.id}>
-              {/* IMAGE */}
-
-              <div className="service-image">
-                <img src={service.image} alt={service.title} />
-
-                <div className="service-number">{service.number}</div>
-              </div>
-
-              {/* CONTENT */}
-
-              <div className="service-content">
-                <div className="service-icon">
-                  <Icon size={30} strokeWidth={1.6} />
+                  <span className="service-number">{service.number}</span>
                 </div>
 
-                <span className="service-label">{service.shortTitle}</span>
+                <h3>{service.title}</h3>
 
-                <h2>{service.title}</h2>
-
-                <div className="service-line"></div>
+                {service.subtitle && <p className="service-subtitle">{service.subtitle}</p>}
 
                 <p className="service-description">{service.description}</p>
 
-                <p className="service-details">{service.details}</p>
-
-                {/* FEATURES */}
-
-                <ul className="service-points">
-                  {service.points.map(point => (
-                    <li key={point}>
-                      <span className="check">✓</span>
-
-                      {point}
-                    </li>
-                  ))}
-                </ul>
-
-                {/* BUTTONS */}
-
-                <div className="service-buttons">
-                  <Link
-                    style={{ textDecoration: "none" }}
-                    to={`/contact?service=${encodeURIComponent(service.title)}`}
-                    className="service-enquire"
-                    onClick={() => window.scrollTo(0, 0)}
-                  >
-                    ENQUIRE NOW
-                    <span>→</span>
-                  </Link>
+                <div className="service-card-bottom">
+                  <span />
                 </div>
-              </div>
-            </section>
-          )
-        })}
-      </main>
-
-      {/* ======================================
-          FINAL CTA
-      ====================================== */}
-
-      <section className="services-final-cta">
-        <div>
-          <span>READY TO START?</span>
-
-          <h2>Let's plan your next journey.</h2>
-
-          <p>Tell us where you want to go and let our travel professionals take care of the details.</p>
+              </article>
+            )
+          })}
         </div>
-
-        <Link style={{ textDecoration: "none" }} to="/contact" className="final-cta-button">
-          TALK TO AN EXPERT
-          <span>→</span>
-        </Link>
       </section>
-    </div>
+
+      {/* CLOSING STATEMENT */}
+      <section className="services-closing">
+        <span className="services-section-label">YOUR JOURNEY, OUR EXPERTISE</span>
+
+        <h2>
+          One Connection.
+          <br />
+          <span>Every Travel Solution.</span>
+        </h2>
+
+        <p>
+          From business trips and family holidays to group journeys and pilgrimage, we connect you to the world with
+          expertise, care, and confidence.
+        </p>
+      </section>
+    </main>
   )
 }
-
-export default Services

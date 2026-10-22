@@ -11,61 +11,57 @@ const NavBar = () => {
     setAboutOpen(false)
   }
 
+  const toggleAbout = () => {
+    setAboutOpen(open => !open)
+  }
+
   return (
     <header className="header">
-      {/* LEFT NAVIGATION */}
-      <nav className="nav-side nav-left" aria-label="Primary navigation">
-        <NavLink to="/" end onClick={closeMenu}>
+      <Link to="/" className="logo-link" onClick={closeMenu}>
+        <img src={logo} alt="Alam Connect" className="navbar-logo" />
+      </Link>
+
+      {/* Desktop Navigation */}
+      <nav className="nav-links" aria-label="Main navigation">
+        <NavLink to="/" end className="nav-montserrat" onClick={closeMenu}>
           Home
         </NavLink>
 
-        <NavLink to="/services" onClick={closeMenu}>
+        <NavLink to="/services" className="nav-montserrat" onClick={closeMenu}>
           Services
         </NavLink>
-      </nav>
 
-      {/* CENTER LOGO */}
-      <Link to="/" className="logo-link" onClick={closeMenu} aria-label="Alam Connect home">
-        <img src={logo} alt="Alam Connect — Your Journey, Our Expertise" className="navbar-logo" />
-      </Link>
-
-      {/* RIGHT NAVIGATION */}
-      <nav className="nav-side nav-right" aria-label="Secondary navigation">
-        {/* ABOUT US DROPDOWN */}
-        <div
-          className={`nav-dropdown ${aboutOpen ? "dropdown-open" : ""}`}
-          onMouseEnter={() => setAboutOpen(true)}
-          onMouseLeave={() => setAboutOpen(false)}
-        >
+        <div className="nav-dropdown">
           <button
             type="button"
-            className="dropdown-toggle"
-            onClick={() => setAboutOpen(open => !open)}
+            className="dropdown-toggle nav-lato"
+            onClick={toggleAbout}
             aria-expanded={aboutOpen}
+            aria-haspopup="true"
           >
             About Us
-            <span className="dropdown-arrow" aria-hidden="true">
-              ▾
-            </span>
+            <span className={`dropdown-arrow ${aboutOpen ? "arrow-open" : ""}`}>▾</span>
           </button>
 
-          <div className="dropdown-menu">
-            <NavLink to="/about" onClick={closeMenu}>
-              Who Are We?
-            </NavLink>
+          {aboutOpen && (
+            <div className="dropdown-menu">
+              <NavLink to="/about" onClick={closeMenu}>
+                Who Are We?
+              </NavLink>
 
-            <NavLink to="/message" onClick={closeMenu}>
-              Message from the Founder
-            </NavLink>
-          </div>
+              <NavLink to="/message" onClick={closeMenu}>
+                Message from the Founder
+              </NavLink>
+            </div>
+          )}
         </div>
 
-        <NavLink to="/contact" onClick={closeMenu}>
+        <NavLink to="/contact" className="nav-lato" onClick={closeMenu}>
           Contact Us
         </NavLink>
       </nav>
 
-      {/* MOBILE MENU BUTTON */}
+      {/* Mobile Menu Button */}
       <button
         type="button"
         className={`menu-toggle ${menuOpen ? "active" : ""}`}
@@ -79,30 +75,23 @@ const NavBar = () => {
         <span />
       </button>
 
-      {/* MOBILE NAVIGATION */}
+      {/* Mobile Navigation */}
       <nav
         id="mobile-navigation"
         className={`mobile-nav ${menuOpen ? "mobile-nav-open" : ""}`}
         aria-label="Mobile navigation"
       >
-        <NavLink to="/" end onClick={closeMenu}>
+        <NavLink to="/" end className="nav-montserrat" onClick={closeMenu}>
           Home
         </NavLink>
 
-        <NavLink to="/services" onClick={closeMenu}>
+        <NavLink to="/services" className="nav-montserrat" onClick={closeMenu}>
           Services
         </NavLink>
 
-        <button
-          type="button"
-          className="mobile-about-toggle"
-          onClick={() => setAboutOpen(open => !open)}
-          aria-expanded={aboutOpen}
-        >
+        <button type="button" className="mobile-about-toggle nav-lato" onClick={toggleAbout} aria-expanded={aboutOpen}>
           About Us
-          <span className="dropdown-arrow" aria-hidden="true">
-            ▾
-          </span>
+          <span className={`dropdown-arrow ${aboutOpen ? "arrow-open" : ""}`}>▾</span>
         </button>
 
         {aboutOpen && (
@@ -117,7 +106,7 @@ const NavBar = () => {
           </div>
         )}
 
-        <NavLink to="/contact" onClick={closeMenu}>
+        <NavLink to="/contact" className="nav-lato" onClick={closeMenu}>
           Contact Us
         </NavLink>
       </nav>

@@ -7,24 +7,7 @@ const Footer = () => {
   return (
     <footer className="site-footer">
       {/* Top brand statement */}
-      <div className="footer-intro">
-        <div className="footer-intro-copy">
-          <span className="footer-eyebrow">ALAM CONNECT · EST. IN TRAVEL</span>
-          <h2>
-            The world is closer
-            <br />
-            <em>than you think.</em>
-          </h2>
-        </div>
-
-        <Link to="/contact" className="footer-cta">
-          <span>Let's plan your journey</span>
-          <ArrowUpRight size={19} />
-        </Link>
-      </div>
-
-      <div className="footer-divider" />
-
+      
       {/* Main footer columns */}
       <div className="footer-main">
         <div className="footer-brand">

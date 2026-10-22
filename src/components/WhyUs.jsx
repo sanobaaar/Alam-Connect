@@ -1,18 +1,11 @@
-import {
-  Award,
-  People,
-  Compass,
-  ShieldCheck,
-  Clock
-} from "react-bootstrap-icons"
+import { Award, People, Compass, ShieldCheck, Clock } from "react-bootstrap-icons"
 
 const WhyUs = () => {
   return (
     <div>
       <section className="why-section">
         <div className="section-heading">
-          <h2>Why Choose Alam Connect?</h2>
-
+          <h2>WHY CHOOSE ALAM CONNECT?</h2>
           <div className="gold-line center"></div>
         </div>
 

@@ -104,10 +104,9 @@ export default function About() {
 
             <p>Connecting people, businesses, and destinations through professional travel solutions.</p>
 
-            <Link to="/services" className="about-button">
-              Explore Our Services
-              <ArrowRight size={18} />
-            </Link>
+            <a href="/contact" className="contact-hero-button">
+              SEND AN EMAIL <span>↗</span>
+            </a>
           </div>
         </section>
 

@@ -56,6 +56,7 @@ const services = [
 const ServicesHome = () => {
   const trackRef = useRef(null)
   const isPausedRef = useRef(false)
+  const positionRef = useRef(0)
 
   useEffect(() => {
     const track = trackRef.current
@@ -63,9 +64,7 @@ const ServicesHome = () => {
 
     let animationFrame
     let previousTime = 0
-    let position = 0
-
-    const speed = 35 // pixels per second
+    const speed = 35
 
     const animate = time => {
       if (!previousTime) previousTime = time
@@ -74,15 +73,15 @@ const ServicesHome = () => {
       previousTime = time
 
       if (!isPausedRef.current) {
-        position += speed * delta
+        positionRef.current += speed * delta
 
         const loopWidth = track.scrollWidth / 2
 
-        if (loopWidth > 0 && position >= loopWidth) {
-          position -= loopWidth
+        if (loopWidth > 0 && positionRef.current >= loopWidth) {
+          positionRef.current %= loopWidth
         }
 
-        track.style.transform = `translate3d(${-position}px, 0, 0)`
+        track.style.transform = `translate3d(${-positionRef.current}px, 0, 0)`
       }
 
       animationFrame = requestAnimationFrame(animate)
@@ -100,27 +99,31 @@ const ServicesHome = () => {
     const firstCard = track.querySelector(".square-service")
     if (!firstCard) return
 
-    const cardWidth = firstCard.getBoundingClientRect().width
-    const gap = 24
+    const gap = parseFloat(window.getComputedStyle(track).columnGap) || 0
 
+    const cardStep = firstCard.getBoundingClientRect().width + gap
     const loopWidth = track.scrollWidth / 2
-    const currentPosition = Math.abs(Number(track.style.transform.match(/translate3d\((-?[\d.]+)px/)?.[1] || 0)) || 0
 
-    let nextPosition = currentPosition + direction * (cardWidth + gap)
+    if (!loopWidth) return
 
-    if (nextPosition < 0) nextPosition = loopWidth - (cardWidth + gap)
-    if (nextPosition >= loopWidth) nextPosition = 0
+    positionRef.current += direction * cardStep
 
-    track.style.transform = `translate3d(${-nextPosition}px, 0, 0)`
+    if (positionRef.current < 0) {
+      positionRef.current = Math.max(0, loopWidth - cardStep)
+    }
+
+    if (positionRef.current >= loopWidth) {
+      positionRef.current = 0
+    }
+
+    track.style.transform = `translate3d(${-positionRef.current}px, 0, 0)`
   }
 
   return (
     <section className="services-section" id="services">
       <header className="services-header">
-        <div className="gold-line" />
-
         <h2>OUR SERVICES</h2>
-
+        <div className="gold-line center"></div>
       </header>
 
       <div
@@ -149,7 +152,12 @@ const ServicesHome = () => {
                 aria-hidden={index >= services.length ? "true" : undefined}
               >
                 <div className="service-image">
-                  <img src={service.image} alt={index >= services.length ? "" : service.title} loading="lazy" />
+                  <img
+                    src={service.image}
+                    alt={index >= services.length ? "" : service.title}
+                    loading={index < 4 ? "eager" : "lazy"}
+                    draggable="false"
+                  />
 
                   <div className="service-image-overlay" />
                 </div>
@@ -158,7 +166,10 @@ const ServicesHome = () => {
                   <span className="service-number">{String((index % services.length) + 1).padStart(2, "0")}</span>
 
                   <h3>{service.title}</h3>
+
                   <p>{service.description}</p>
+
+                  <span className="service-explore">EXPLORE SERVICE ↗</span>
                 </div>
               </article>
             ))}
@@ -174,7 +185,6 @@ const ServicesHome = () => {
           >
             &#8592;
           </button>
-
 
           <button type="button" className="carousel-arrow" aria-label="Next services" onClick={() => moveCarousel(1)}>
             &#8594;
