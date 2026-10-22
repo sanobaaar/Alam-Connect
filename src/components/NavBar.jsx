@@ -85,7 +85,12 @@ const NavBar = () => {
           Home
         </NavLink>
 
-        <button type="button" className="mobile-about-toggle nav-lato" onClick={toggleAbout} aria-expanded={aboutOpen}>
+        <button
+          type="button"
+          className="mobile-about-toggle nav-montserrat"
+          onClick={toggleAbout}
+          aria-expanded={aboutOpen}
+        >
           About Us
           <span className={`dropdown-arrow ${aboutOpen ? "arrow-open" : ""}`}>▾</span>
         </button>
@@ -102,7 +107,7 @@ const NavBar = () => {
           </div>
         )}
 
-        <NavLink to="/services" className="nav-montserrat" onClick={closeMenu}>
+        <NavLink to="/services" className="nav-lato" onClick={closeMenu}>
           Services
         </NavLink>
 
