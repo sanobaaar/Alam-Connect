@@ -271,7 +271,7 @@ svg {
 
 /* HOME PAGE */
 
-.home-page, .about-page, .founder-page {
+.home-page, .about-page, .founder-page, .services-page {
   width: 100%;
   overflow-x: clip;
 }
@@ -1147,6 +1147,7 @@ svg {
   z-index: 2;
   width: 65%;
   max-width: 760px;
+  padding: 14% 0 115px;
 }
 
 .services-eyebrow,
@@ -2286,12 +2287,12 @@ svg {
   z-index: 1;
   width: 100%;
   max-width: 750px;
-  padding: 50px 0;
+  padding: 14% 0 115px;
 }
 
 .about-hero h1 {
   margin-bottom: 22px;
-  font-size: clamp(2.8rem, 5.5vw, 5rem);
+  font-size: 54px;
   font-weight: 700;
   letter-spacing: -2.4px;
 }
@@ -4697,14 +4698,14 @@ svg {
 
   font-weight: 600;
 
-  color: #c4934d;
+  color: #000;
 }
 
 
 /* HERO TITLE */
 
 .services-hero h1 {
-  margin: 12px 0 0;
+  margin: 12px 12px 20px;
 
 
 
@@ -4714,11 +4715,11 @@ svg {
 
   font-weight: 500;
 
-  color: #172c47;
+  color: #caeeee;
 }
 
 .services-hero h1 span {
-  color: #c4934d;
+  color: #000;
 }
 
 
@@ -6004,7 +6005,7 @@ svg {
 .contact-hero-content {
   width: min(680px, 90%);
   margin-left: max(7%, calc((100vw - 1240px) / 5));
-  padding: 100px 0 115px;
+  padding: 14% 0 115px;
 }
 
 .contact-eyebrow,
@@ -6020,7 +6021,7 @@ svg {
 .contact-hero-content h1 {
   margin: 22px 0;
   font-family: "Playfair Display", Georgia, serif;
-  font-size: clamp(3rem, 6vw, 5.5rem);
+  font-size: 54px;
   font-weight: 500;
   line-height: 1.08;
   letter-spacing: -2px;

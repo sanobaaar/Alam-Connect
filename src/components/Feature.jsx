@@ -1,5 +1,5 @@
 import { Plane, Hotel, Stamp, Users, CarFront, Compass, Globe2, BriefcaseBusiness } from "lucide-react"
-
+import NavBar from "./NavBar"
 
 const services = [
   {
@@ -63,99 +63,104 @@ const services = [
 
 export default function Feature() {
   return (
-    <main className="services-page">
-      {/* HERO SECTION */}
-      <section className="services-hero">
-        <div className="services-hero-inner">
-          <span className="services-eyebrow">
-            ALAM CONNECT
-            <span className="eyebrow-line" />
-            TRAVEL SOLUTIONS
-          </span>
+    <>
+      <div className="hero-wrapper">
+        <NavBar />
+      </div>
+      <main className="services-page">
+        {/* HERO SECTION */}
+        <section className="services-hero">
+          <div className="services-hero-inner">
+            <span className="services-eyebrow">
+              ALAM CONNECT
+              <span className="eyebrow-line" />
+              TRAVEL SOLUTIONS
+            </span>
 
-          <h1>
-            Every Journey.
-            <br />
-            <span>One Connection.</span>
-          </h1>
+            <h1>
+              Every Journey.
+              <br />
+              <span>One Connection.</span>
+            </h1>
 
-          <p className="services-hero-description">
-            From the first booking to the final destination, we bring every part of your journey together with
-            expertise, care, and confidence.
-          </p>
+            <p className="services-hero-description">
+              From the first booking to the final destination, we bring every part of your journey together with
+              expertise, care, and confidence.
+            </p>
 
-          <a href="/about" className="contact-hero-button">
-            LEARN MORE ABOUT US <span>↗</span>
-          </a>
-        </div>
+            <a href="/about" className="contact-hero-button">
+              LEARN MORE ABOUT US <span>↗</span>
+            </a>
+          </div>
 
-        <div className="services-hero-side" aria-hidden="true">
-          <span className="hero-orbit orbit-one" />
-          <span className="hero-orbit orbit-two" />
+          <div className="services-hero-side" aria-hidden="true">
+            <span className="hero-orbit orbit-one" />
+            <span className="hero-orbit orbit-two" />
 
-          <Plane className="hero-plane-icon" strokeWidth={1} />
+            <Plane className="hero-plane-icon" strokeWidth={1} />
 
-          <span className="hero-side-label">YOUR WORLD, CONNECTED.</span>
-        </div>
-      </section>
+            <span className="hero-side-label">YOUR WORLD, CONNECTED.</span>
+          </div>
+        </section>
 
-      {/* INTRODUCTION */}
-      <section className="services-intro" id="our-services">
-        <div>
-          <span className="services-section-label">WHAT WE DO</span>
+        {/* INTRODUCTION */}
+        <section className="services-intro" id="our-services">
+          <div>
+            <span className="services-section-label">WHAT WE DO</span>
 
-          <h2>Travel made simpler.</h2>
-        </div>
+            <h2>Travel made simpler.</h2>
+          </div>
 
-        <p>Whatever brings you to the world, we provide the travel expertise and support to get you there.</p>
-      </section>
+          <p>Whatever brings you to the world, we provide the travel expertise and support to get you there.</p>
+        </section>
 
-      {/* SERVICES GRID */}
-      <section className="services-grid-section">
-        <div className="services-grid">
-          {services.map(service => {
-            const Icon = service.icon
+        {/* SERVICES GRID */}
+        <section className="services-grid-section">
+          <div className="services-grid">
+            {services.map(service => {
+              const Icon = service.icon
 
-            return (
-              <article className="service-card" key={service.number}>
-                <div className="service-card-top">
-                  <div className="service-icon">
-                    <Icon size={25} strokeWidth={1.6} />
+              return (
+                <article className="service-card" key={service.number}>
+                  <div className="service-card-top">
+                    <div className="service-icon">
+                      <Icon size={25} strokeWidth={1.6} />
+                    </div>
+
+                    <span className="service-number">{service.number}</span>
                   </div>
 
-                  <span className="service-number">{service.number}</span>
-                </div>
+                  <h3>{service.title}</h3>
 
-                <h3>{service.title}</h3>
+                  {service.subtitle && <p className="service-subtitle">{service.subtitle}</p>}
 
-                {service.subtitle && <p className="service-subtitle">{service.subtitle}</p>}
+                  <p className="service-description">{service.description}</p>
 
-                <p className="service-description">{service.description}</p>
+                  <div className="service-card-bottom">
+                    <span />
+                  </div>
+                </article>
+              )
+            })}
+          </div>
+        </section>
 
-                <div className="service-card-bottom">
-                  <span />
-                </div>
-              </article>
-            )
-          })}
-        </div>
-      </section>
+        {/* CLOSING STATEMENT */}
+        <section className="services-closing">
+          <span className="services-section-label">YOUR JOURNEY, OUR EXPERTISE</span>
 
-      {/* CLOSING STATEMENT */}
-      <section className="services-closing">
-        <span className="services-section-label">YOUR JOURNEY, OUR EXPERTISE</span>
+          <h2>
+            One Connection.
+            <br />
+            <span>Every Travel Solution.</span>
+          </h2>
 
-        <h2>
-          One Connection.
-          <br />
-          <span>Every Travel Solution.</span>
-        </h2>
-
-        <p>
-          From business trips and family holidays to group journeys and pilgrimage, we connect you to the world with
-          expertise, care, and confidence.
-        </p>
-      </section>
-    </main>
+          <p>
+            From business trips and family holidays to group journeys and pilgrimage, we connect you to the world with
+            expertise, care, and confidence.
+          </p>
+        </section>
+      </main>
+    </>
   )
 }
