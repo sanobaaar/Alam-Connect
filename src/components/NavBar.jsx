@@ -27,10 +27,6 @@ const NavBar = () => {
           Home
         </NavLink>
 
-        <NavLink to="/services" className="nav-montserrat" onClick={closeMenu}>
-          Services
-        </NavLink>
-
         <div className="nav-dropdown">
           <button
             type="button"
@@ -55,6 +51,10 @@ const NavBar = () => {
             </div>
           )}
         </div>
+
+        <NavLink to="/services" className="nav-montserrat" onClick={closeMenu}>
+          Services
+        </NavLink>
 
         <NavLink to="/contact" className="nav-lato" onClick={closeMenu}>
           Contact Us
@@ -85,10 +85,6 @@ const NavBar = () => {
           Home
         </NavLink>
 
-        <NavLink to="/services" className="nav-montserrat" onClick={closeMenu}>
-          Services
-        </NavLink>
-
         <button type="button" className="mobile-about-toggle nav-lato" onClick={toggleAbout} aria-expanded={aboutOpen}>
           About Us
           <span className={`dropdown-arrow ${aboutOpen ? "arrow-open" : ""}`}>▾</span>
@@ -105,6 +101,10 @@ const NavBar = () => {
             </NavLink>
           </div>
         )}
+
+        <NavLink to="/services" className="nav-montserrat" onClick={closeMenu}>
+          Services
+        </NavLink>
 
         <NavLink to="/contact" className="nav-lato" onClick={closeMenu}>
           Contact Us

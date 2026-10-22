@@ -11,9 +11,7 @@ const AboutHome = () => {
         <div className="abouthome-content">
           <span className="abouthome-eyebrow">ABOUT US</span>
 
-          <h2 className="abouthome-heading">
-            Travel <span> done well</span>
-          </h2>
+      
 
           <div className="abouthome-description">
             <p>
