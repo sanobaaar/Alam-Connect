@@ -50,13 +50,13 @@ const Footer = () => {
             <ArrowUpRight size={14} />
           </a>
 
-          <a href="tel:+16040000000">
-            +1 604 000 0000
+          <a href="tel:+919198956759">
+            +91 9198956759
             <ArrowUpRight size={14} />
           </a>
 
-          <p>Vancouver, British Columbia</p>
-          <p>Canada</p>
+          <p>Lucknow, Uttar Pradesh</p>
+          <p>India</p>
         </div>
 
         <div className="footer-social">

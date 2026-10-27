@@ -1,9 +1,9 @@
 import { useEffect, useRef } from "react"
 
-import flightsImg from "../assets/flight.jpg"
+import flightsImg from "../assets/serviceflight.jpg"
 import hotelsImg from "../assets/hotel.jpg"
 import visaImg from "../assets/visa.jpg"
-import miceImg from "../assets/family.jpg"
+import miceImg from "../assets/grouptravel.jpg"
 import transfersImg from "../assets/rental.jpg"
 import pilgrimageImg from "../assets/pilgrimage.jpg"
 import tailorMadeImg from "../assets/holiday.jpg"

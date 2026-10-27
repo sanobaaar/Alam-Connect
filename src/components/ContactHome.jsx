@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { ArrowUpRight, Plane } from "lucide-react"
 
-import contactImage from "../assets/holiday.jpg"
+import contactImage from "../assets/wheretravel.jpg"
 import secondaryImage from "../assets/family.jpg"
 
 const initialFormData = {
@@ -45,10 +45,6 @@ const ContactHome = () => {
           <img src={secondaryImage} alt="Discover your next travel destination" loading="lazy" />
         </div>
 
-        <div className="contact-image-secondary">
-          <img src={contactImage} alt="Memorable travel experiences" loading="lazy" />
-        </div>
-
         <div className="contact-floating-note">
           <span className="contact-note-mark">“</span>
           <p>
@@ -56,6 +52,10 @@ const ContactHome = () => {
             <br />
             Make more of every moment.
           </p>
+        </div>
+
+        <div className="contact-image-secondary">
+          <img src={contactImage} alt="Memorable travel experiences" loading="lazy" />
         </div>
       </div>
 

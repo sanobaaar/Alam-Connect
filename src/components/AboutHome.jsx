@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 
 import mainTravelImage from "../assets/holiday.jpg"
-import secondaryTravelImage from "../assets/startjourney.jpg"
+import secondaryTravelImage from "../assets/flight.jpg"
 
 const AboutHome = () => {
   return (
@@ -35,11 +35,11 @@ const AboutHome = () => {
         {/* RIGHT: OVERLAPPING TRAVEL IMAGES */}
         <div className="abouthome-visual">
           <div className="abouthome-image-main">
-            <img src={mainTravelImage} alt="A beautiful destination for a memorable journey" />
+            <img src={secondaryTravelImage} alt="A beautiful destination for a memorable journey" />
           </div>
 
           <div className="abouthome-image-secondary">
-            <img src={secondaryTravelImage} alt="Scenic architecture and travel inspiration" />
+            <img src={mainTravelImage} alt="Scenic architecture and travel inspiration" />
           </div>
         </div>
       </div>

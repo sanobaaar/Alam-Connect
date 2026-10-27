@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { Link, NavLink } from "react-router-dom"
-import logo from "../assets/alam-logo.svg"
+import logo from "../assets/alamgoldlogo.png"
 
 const NavBar = () => {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -30,7 +30,7 @@ const NavBar = () => {
         <div className="nav-dropdown">
           <button
             type="button"
-            className="dropdown-toggle nav-lato"
+            className="dropdown-toggle nav-montserrat"
             onClick={toggleAbout}
             aria-expanded={aboutOpen}
             aria-haspopup="true"
@@ -56,7 +56,7 @@ const NavBar = () => {
           Services
         </NavLink>
 
-        <NavLink to="/contact" className="nav-lato" onClick={closeMenu}>
+        <NavLink to="/contact" className="nav-montserrat" onClick={closeMenu}>
           Contact Us
         </NavLink>
       </nav>

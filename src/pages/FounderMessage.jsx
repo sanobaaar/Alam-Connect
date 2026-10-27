@@ -1,6 +1,8 @@
 import Footer from "../components/Footer"
 import NavBar from "../components/NavBar"
 
+import founderImg from "../assets/aboutfounder.png"
+
 const FounderMessage = () => {
   return (
     <>
@@ -26,10 +28,7 @@ const FounderMessage = () => {
           </div>
 
           <div className="founder-hero-image">
-            <img
-              src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1800&q=85"
-              alt="Airplane travelling above the clouds"
-            />
+            <img src={founderImg} alt="Airplane travelling above the clouds" />
             <span className="founder-image-caption">ALAM CONNECT — OUR JOURNEY</span>
           </div>
         </section>
@@ -126,11 +125,7 @@ const FounderMessage = () => {
             </div>
 
             <div className="founder-split-image">
-              <img
-                src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1200&q=85"
-                alt="Aircraft ready for a new journey"
-                loading="lazy"
-              />
+              <img src={founderImg} alt="Aircraft ready for a new journey" loading="lazy" />
             </div>
           </div>
         </section>

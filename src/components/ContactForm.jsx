@@ -67,11 +67,6 @@ function Contact() {
 
             <div className="contact-accent-line" />
 
-            <p>
-              Whether you're planning a holiday, arranging business travel, booking flights or exploring visa services,
-              our team is here to help make every journey simpler.
-            </p>
-
             <a href="#enquiry-form" className="contact-hero-button">
               PLAN YOUR JOURNEY <span>↗</span>
             </a>
@@ -82,32 +77,7 @@ function Contact() {
           </div>
         </section>
 
-        {/* INTRODUCTION */}
-        <section className="contact-intro-section">
-          <div className="contact-intro-heading">
-            <span className="contact-section-label">WE'RE HERE FOR YOU</span>
-
-            <h2>
-              Travel expertise.
-              <br />
-              <span>Personal attention.</span>
-            </h2>
-          </div>
-
-          <div className="contact-intro-copy">
-            <p>
-              At Alam Connect, we combine decades of travel industry experience with a modern, personalized approach to
-              travel planning.
-            </p>
-
-            <p>
-              Tell us what you have in mind. From a simple flight booking to a complete travel itinerary, we'll help you
-              explore the options that suit your needs.
-            </p>
-          </div>
-        </section>
-
-        {/* SERVICES */}
+        {/* SERVICES
         <section className="contact-services">
           <div className="contact-services-heading">
             <span className="contact-section-label">HOW CAN WE HELP?</span>
@@ -146,7 +116,7 @@ function Contact() {
               <p>Hotel reservations, visa assistance and other travel services to help organize your journey.</p>
             </article>
           </div>
-        </section>
+        </section> */}
 
         {/* ENQUIRY SECTION */}
         <section className="contact-enquiry-section" id="enquiry-form">
@@ -361,6 +331,31 @@ function Contact() {
                 company's privacy practices.
               </p>
             </form>
+          </div>
+        </section>
+
+        {/* INTRODUCTION */}
+        <section className="contact-intro-section">
+          <div className="contact-intro-heading">
+            <span className="contact-section-label">WE'RE HERE FOR YOU</span>
+
+            <h2>
+              Travel expertise.
+              <br />
+              <span>Personal attention.</span>
+            </h2>
+          </div>
+
+          <div className="contact-intro-copy">
+            <p>
+              At Alam Connect, we combine decades of travel industry experience with a modern, personalized approach to
+              travel planning.
+            </p>
+
+            <p>
+              Tell us what you have in mind. From a simple flight booking to a complete travel itinerary, we'll help you
+              explore the options that suit your needs.
+            </p>
           </div>
         </section>
       </div>

@@ -1,6 +1,8 @@
 import { Plane, Hotel, Stamp, Users, CarFront, Compass, Globe2, BriefcaseBusiness } from "lucide-react"
 import NavBar from "./NavBar"
 
+import serviceHero from "../assets/servicesheri.jpg"
+
 const services = [
   {
     number: "01",
@@ -70,6 +72,10 @@ export default function Feature() {
       <main className="services-page">
         {/* HERO SECTION */}
         <section className="services-hero">
+          <div className="service-hero-image">
+            <img src={serviceHero} alt="Services" />
+          </div>
+          <div className="service-hero-overlay" />
           <div className="services-hero-inner">
             <span className="services-eyebrow">
               ALAM CONNECT
@@ -83,23 +89,9 @@ export default function Feature() {
               <span>One Connection.</span>
             </h1>
 
-            <p className="services-hero-description">
-              From the first booking to the final destination, we bring every part of your journey together with
-              expertise, care, and confidence.
-            </p>
-
             <a href="/about" className="contact-hero-button">
               LEARN MORE ABOUT US <span>↗</span>
             </a>
-          </div>
-
-          <div className="services-hero-side" aria-hidden="true">
-            <span className="hero-orbit orbit-one" />
-            <span className="hero-orbit orbit-two" />
-
-            <Plane className="hero-plane-icon" strokeWidth={1} />
-
-            <span className="hero-side-label">YOUR WORLD, CONNECTED.</span>
           </div>
         </section>
 

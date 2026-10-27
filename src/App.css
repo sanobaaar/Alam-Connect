@@ -39,7 +39,7 @@ h2,
 h3,
 .footer-logo,
 .contact-floating-note p {
-  font-family: "Cormorant Garamond", serif;
+  font-family: "Canela", Georgia, serif;
   font-weight: 500;
 }
 
@@ -48,7 +48,7 @@ button,
 input,
 select,
 textarea, p, a {
-  font-family: "Manrope", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 /* Prevent horizontal scrolling on mobile */
@@ -140,7 +140,7 @@ svg {
   flex-direction: column;
   width: 100%;
   margin: 0 auto;
-  padding: 200px 7% 90px;
+  padding: 100px 7% 90px;
 
   box-sizing: border-box;
 }
@@ -150,7 +150,7 @@ svg {
 /* MAIN HEADING */
 
 .hero-heading h1 {
-  margin: 0;
+  margin: 20px;
 
   color: #ffffff;
   font-family: "Canela", serif;
@@ -329,7 +329,7 @@ svg {
 
 .navbar-logo {
   display: block;
-  width: 100px;
+  width: 250px;
   height: auto;
   max-width: 100%;
   object-fit: contain;
@@ -357,8 +357,8 @@ svg {
   background: transparent;
 
   color: #ffffff;
-  font-size: 20px;
-  font-weight: 500;
+  font-size: 22px;
+  font-weight: 550;
   text-decoration: none;
   white-space: nowrap;
   cursor: pointer;
@@ -374,9 +374,7 @@ svg {
 
 /* Last two links: Lato */
 
-.nav-lato {
-  font-family: "Lato", sans-serif;
-}
+
 
 .nav-links>a:hover,
 .nav-links>a.active,
@@ -452,7 +450,7 @@ svg {
   padding: 12px 16px;
 
   color: #ffffff;
-  font-family: "Lato", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 20px;
   line-height: 1.5;
   text-decoration: none;
@@ -624,7 +622,7 @@ svg {
     padding: 12px 0;
 
     color: #ffffff;
-    font-family: "Lato", sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 13px;
     line-height: 1.5;
     text-decoration: none;
@@ -746,7 +744,7 @@ svg {
   position: relative;
   width: 100%;
   max-width: 1250px;
-  height: clamp(280px, 44vw, 520px);
+  height: clamp(280px, 44vw, 620px);
   margin: 0 auto;
   overflow: hidden;
   border-radius: 5px;
@@ -763,7 +761,7 @@ svg {
 .founder-image-caption {
   position: absolute;
   bottom: 0;
-  left: 0;
+  right: 0;
   padding: 18px 24px;
   background: #f8f8f8;
   color: #111111;
@@ -1136,8 +1134,7 @@ svg {
   position: relative;
   display: flex;
   align-items: center;
-  min-height: 490px;
-  padding: 100px 9%;
+  min-height: 660px;
   background: var(--services-teal);
   isolation: isolate;
 }
@@ -1145,9 +1142,7 @@ svg {
 .services-hero-inner {
   position: relative;
   z-index: 2;
-  width: 65%;
-  max-width: 760px;
-  padding: 14% 0 115px;
+
 }
 
 .services-eyebrow,
@@ -1167,18 +1162,20 @@ svg {
 }
 
 .services-hero h1 {
-  margin: 28px 0 22px;
+  margin: 8px 0 2px;
   font-family: "Canela", Georgia, serif;
   font-size: clamp(44px, 6vw, 76px);
   font-weight: 400;
   line-height: 1.08;
-  letter-spacing: -1.8px;
+  letter-spacing: 1.8px;
+
 }
 
-.services-hero h1 span,
-.services-closing h2 span {
+.services-hero h1 span, .contact-hero-content h1 span, .about-hero h1 span, .services-closing h2 span {
   font-style: italic;
 }
+
+
 
 .services-hero-description {
   max-width: 490px;
@@ -2071,9 +2068,9 @@ svg {
 
 .abouthome-image-secondary {
   position: absolute;
-  left: 0;
+  left: -14%;
   bottom: 7%;
-  width: 59%;
+  width: 69%;
   height: 60%;
   overflow: hidden;
   background: #eeeeee;
@@ -2266,8 +2263,7 @@ svg {
   position: relative;
   display: flex;
   align-items: center;
-  min-height: 510px;
-  padding: 90px 8%;
+  min-height: 660px;
   background-image: url("https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=2000&q=85");
   background-position: center 48%;
   background-size: cover;
@@ -2285,15 +2281,15 @@ svg {
 .about-hero-content {
   position: relative;
   z-index: 1;
-  width: 100%;
+  width: min(680px, 90%);
   max-width: 750px;
-  padding: 14% 0 115px;
+  padding: 12% 0 115px;
+  margin-left: max(7%, calc((100vw - 1240px) / 5));
 }
 
 .about-hero h1 {
   margin-bottom: 22px;
   font-size: 54px;
-  font-weight: 700;
   letter-spacing: -2.4px;
 }
 
@@ -4224,7 +4220,7 @@ svg {
 .contact-floating-note {
   position: absolute;
   top: 325px;
-  left: 49%;
+  left: 5%;
 
   z-index: 2;
 
@@ -4656,7 +4652,7 @@ svg {
 ========================================= */
 
 .services-hero {
-  min-height: 430px;
+  min-height: 660px;
 
   display: flex;
   align-items: center;
@@ -4698,7 +4694,7 @@ svg {
 
   font-weight: 600;
 
-  color: #000;
+  color: #caeeee;
 }
 
 
@@ -4715,7 +4711,7 @@ svg {
 
   font-weight: 500;
 
-  color: #caeeee;
+  color: #000;
 }
 
 .services-hero h1 span {
@@ -5978,7 +5974,15 @@ svg {
   background: #e7f2ee;
 }
 
-.contact-hero-image,
+.service-hero-image,
+.service-hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+
+
+.contact-hero-image, .service-hero-image,
 .contact-hero-overlay {
   position: absolute;
   inset: 0;
@@ -5993,19 +5997,44 @@ svg {
   display: block;
 }
 
+.service-hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
 .contact-hero-overlay {
   background:
-    linear-gradient(90deg,
-      rgba(255, 250, 244, 0.96) 0%,
-      rgba(255, 250, 244, 0.88) 38%,
+    linear-gradient(10deg,
+      rgba(255, 255, 255, 0.485) 0%,
+      rgba(255, 250, 244, 0.543) 38%,
       rgba(255, 250, 244, 0.43) 68%,
       rgba(255, 250, 244, 0.08) 100%);
 }
 
+.service-hero-overlay {
+  background:
+    linear-gradient(180deg,
+      rgba(69, 69, 69, 0.801) 0%,
+      rgba(220, 220, 220, 0.629) 38%,
+      rgba(255, 250, 244, 0.43) 68%,
+      rgba(212, 212, 212, 0.08) 100%);
+}
+
+
+
 .contact-hero-content {
   width: min(680px, 90%);
   margin-left: max(7%, calc((100vw - 1240px) / 5));
-  padding: 14% 0 115px;
+  padding: 12% 0 115px;
+}
+
+.services-hero-inner {
+  width: min(680px, 90%);
+  margin-left: max(7%, calc((100vw - 1240px) / 5));
+  padding: 12% 0 115px;
 }
 
 .contact-eyebrow,
@@ -6027,7 +6056,7 @@ svg {
   letter-spacing: -2px;
 }
 
-.contact-hero-content h1 span,
+
 .contact-intro-heading h2 span,
 .contact-enquiry-info h2 span {
   color: var(--contact-teal);
@@ -6043,7 +6072,7 @@ svg {
 
 .contact-hero-content>p {
   max-width: 530px;
-  color: #425e60;
+  color: #000;
   font-size: 1.04rem;
   line-height: 1.9;
 }
@@ -6300,7 +6329,7 @@ svg {
   gap: 12px;
   margin-top: 40px;
   padding: 20px;
-  color: var(--contact-dark);
+  color: var(--contact-ink);
   background: #fff0e6;
   border-left: 3px solid var(--contact-peach);
   font-size: 0.9rem;
