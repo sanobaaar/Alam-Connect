@@ -1459,7 +1459,6 @@ svg {
   .services-hero-inner {
     width: 100%;
     padding: 32% 0 115px;
-    margin-left: 0;
   }
 
   .services-hero h1 {
@@ -6045,7 +6044,7 @@ svg {
 
 .contact-hero-content {
   width: min(680px, 90%);
-  margin-left: max(7%, calc((100vw - 1240px) / 5));
+  margin-left: 8rem;
   padding: 12% 0 115px;
 }
 
@@ -6055,7 +6054,7 @@ svg {
   width: min(680px, 90%);
   max-width: 750px;
   padding: 14% 0 115px;
-  /* margin-left: max(7%, calc((100vw - 1240px) / 5)); */
+  margin-left: 8rem;
 
 }
 
