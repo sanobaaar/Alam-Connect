@@ -57,8 +57,6 @@ function Contact() {
           <div className="contact-hero-overlay" />
 
           <div className="contact-hero-content">
-            <span className="contact-eyebrow">LET'S START A CONVERSATION</span>
-
             <h1>
               Your Next Journey,
               <br />
@@ -150,14 +148,6 @@ function Contact() {
                 <div>
                   <span>Phone</span>
                   <p>Contact our travel team</p>
-                </div>
-              </div>
-
-              <div className="contact-info-item">
-                <div className="contact-info-icon">◷</div>
-                <div>
-                  <span>Personalized Assistance</span>
-                  <p>Travel support tailored to your needs</p>
                 </div>
               </div>
             </div>

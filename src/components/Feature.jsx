@@ -77,12 +77,7 @@ export default function Feature() {
           </div>
           <div className="service-hero-overlay" />
           <div className="services-hero-inner">
-            <span className="services-eyebrow">
-              ALAM CONNECT
-              <span className="eyebrow-line" />
-              TRAVEL SOLUTIONS
-            </span>
-
+            
             <h1>
               Every Journey.
               <br />

@@ -133,18 +133,28 @@ svg {
 /* HERO CONTENT */
 
 .heroCopy {
-  position: relative;
-  z-index: 1;
+  position: absolute;
+  inset: 0;
   display: flex;
-  align-items: center;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   width: 100%;
-  margin: 0 auto;
-  padding: 100px 7% 90px;
-
+  padding: 0 24px;
   box-sizing: border-box;
 }
 
+.hero-heading {
+  width: 100%;
+  text-align: center;
+}
+
+.heroCopy p {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 
 /* MAIN HEADING */
@@ -215,7 +225,7 @@ svg {
   }
 
   .hero-heading h1 {
-    font-size: clamp(42px, 9vw, 62px);
+    font-size: clamp(52px, 9vw, 62px);
     letter-spacing: -1px;
   }
 
@@ -223,11 +233,12 @@ svg {
     margin: 23px 0 20px;
   }
 
-  .heroWash {
-    background: linear-gradient(90deg,
-        rgba(255, 255, 255, 0.72) 0%,
-        rgba(255, 255, 255, 0.54) 65%,
-        rgba(255, 255, 255, 0.32) 100%);
+  .heroCopy p {
+    font-size: 22px;
+  }
+
+  .hero-description {
+    font-size: 24px;
   }
 
   .desktop-break {
@@ -248,6 +259,10 @@ svg {
 
   .hero-heading h1 {
     font-size: 42px;
+  }
+
+  .heroCopy p {
+    font-size: 22px;
   }
 
   .hero-tagline {
@@ -533,7 +548,7 @@ svg {
   }
 
   .navbar-logo {
-    width: 100px;
+    width: 150px;
   }
 
   .nav-links {
@@ -562,7 +577,7 @@ svg {
     align-items: stretch;
     gap: 0;
 
-    background: rgba(15, 35, 38, 0.98);
+    background: rgba(0, 0, 0, 0.98);
     border-top: 1px solid rgba(206, 238, 238, 0.2);
 
     opacity: 0;
@@ -643,7 +658,7 @@ svg {
   }
 
   .navbar-logo {
-    width: 90px;
+    width: 140px;
   }
 }
 
@@ -699,12 +714,12 @@ svg {
 
 .founder-hero {
   padding: 120px 8% 75px;
-  background: #f8f8f8;
+  background: #caeeee;
 }
 
 .founder-hero-content {
   max-width: 1000px;
-  margin: 0 auto 45px;
+  margin: 90px auto 45px;
   text-align: center;
 }
 
@@ -1443,6 +1458,8 @@ svg {
 
   .services-hero-inner {
     width: 100%;
+    padding: 32% 0 115px;
+    margin-left: 0;
   }
 
   .services-hero h1 {
@@ -1960,7 +1977,7 @@ svg {
   color: #000;
   font-size: clamp(32px, 4vw, 46px);
   letter-spacing: 4px;
-  font-weight: 700;
+  font-weight: 600;
   font-family: 'Canela', serif;
 }
 
@@ -2132,7 +2149,7 @@ svg {
 
   .abouthome-eyebrow {
     margin-bottom: 18px;
-    font-size: 10px;
+    font-size: 32px;
     letter-spacing: 3px;
   }
 
@@ -2172,7 +2189,8 @@ svg {
   .abouthome-image-secondary {
     width: 58%;
     height: 56%;
-    bottom: 6%;
+    bottom: 45%;
+    left: 2%;
   }
 }
 
@@ -2272,10 +2290,7 @@ svg {
 .about-hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg,
-      rgba(114, 114, 114, 0.94) 0%,
-      rgba(224, 224, 224, 0.83) 43%,
-      rgba(255, 255, 255, 0.066) 100%);
+
 }
 
 .about-hero-content {
@@ -2283,7 +2298,7 @@ svg {
   z-index: 1;
   width: min(680px, 90%);
   max-width: 750px;
-  padding: 12% 0 115px;
+  padding: 14% 0 115px;
   margin-left: max(7%, calc((100vw - 1240px) / 5));
 }
 
@@ -2676,13 +2691,16 @@ svg {
     background-position: 57% center;
   }
 
-  .about-hero-overlay {
-    background: rgba(255, 255, 255, 0.84);
-  }
+
 
   .about-hero h1 {
     font-size: clamp(2.5rem, 11vw, 3.6rem);
     letter-spacing: -1.5px;
+  }
+
+  .about-hero-content {
+    padding: 34% 0 115px;
+    margin-left: 0;
   }
 
   .about-hero-content>p {
@@ -3147,7 +3165,7 @@ svg {
 
   .welcome-text h2,
   .section-heading h2 {
-    font-size: 26px;
+    font-size: 32px;
   }
 
   .welcome-text p {
@@ -3267,7 +3285,7 @@ svg {
 
   .welcome-text h2,
   .section-heading h2 {
-    font-size: 25px;
+    font-size: 32px;
   }
 
   .welcome-text p {
@@ -3403,7 +3421,7 @@ svg {
 
   .welcome-text h2,
   .section-heading h2 {
-    font-size: 23px;
+    font-size: 28px;
   }
 
   .welcome-text p {
@@ -4506,7 +4524,7 @@ svg {
   }
 
   .contact-floating-note {
-    top: 285px;
+    top: 405px;
     left: 43%;
     width: 175px;
   }
@@ -6032,9 +6050,13 @@ svg {
 }
 
 .services-hero-inner {
+  position: relative;
+  z-index: 1;
   width: min(680px, 90%);
-  margin-left: max(7%, calc((100vw - 1240px) / 5));
-  padding: 12% 0 115px;
+  max-width: 750px;
+  padding: 14% 0 115px;
+  /* margin-left: max(7%, calc((100vw - 1240px) / 5)); */
+
 }
 
 .contact-eyebrow,

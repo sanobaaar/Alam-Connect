@@ -96,13 +96,11 @@ export default function About() {
           <div className="about-hero-overlay" />
 
           <div className="about-hero-content">
-            <span className="about-eyebrow">GET TO KNOW US</span>
 
             <h1>
               About <span>Alam Connect</span>
             </h1>
 
-            <p>Connecting people, businesses, and destinations through professional travel solutions.</p>
 
             <a href="/contact" className="contact-hero-button">
               SEND AN EMAIL <span>↗</span>
