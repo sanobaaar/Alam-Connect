@@ -127,8 +127,6 @@ function Contact() {
               <span>your travel plans.</span>
             </h2>
 
-            <div className="contact-accent-line" />
-
             <p>
               Have a question or need help organizing your next trip? Complete the enquiry form and tell us a little
               about what you're looking for.

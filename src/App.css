@@ -2297,8 +2297,10 @@ svg {
   z-index: 1;
   width: min(680px, 90%);
   max-width: 750px;
-  padding: 14% 0 115px;
-  margin-left: max(7%, calc((100vw - 1240px) / 5));
+  padding: 4%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .about-hero h1 {
@@ -6044,8 +6046,10 @@ svg {
 
 .contact-hero-content {
   width: min(680px, 90%);
-  margin-left: 8rem;
-  padding: 12% 0 115px;
+  padding: 4%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .services-hero-inner {
@@ -6053,8 +6057,11 @@ svg {
   z-index: 1;
   width: min(680px, 90%);
   max-width: 750px;
-  padding: 14% 0 115px;
-  margin-left: 8rem;
+  padding: 4%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
 
 }
 
