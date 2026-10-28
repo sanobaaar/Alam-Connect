@@ -861,7 +861,8 @@ svg {
 }
 
 .founder-split-image {
-  height: 650px;
+  height: 100%;
+  object-fit: cover;
   overflow: hidden;
 }
 
@@ -1006,7 +1007,9 @@ svg {
   }
 
   .founder-split-image {
-    height: 380px;
+    height: 100%;
+    object-fit: cover;
+
   }
 
   .founder-values {
@@ -1077,7 +1080,8 @@ svg {
   }
 
   .founder-split-image {
-    height: 280px;
+    height: 100%;
+    object-fit: cover;
   }
 
   .founder-values {
@@ -1445,15 +1449,15 @@ svg {
 
 /* MOBILE */
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   .services-hero {
     min-height: 450px;
     padding: 75px 7%;
   }
 
   .services-hero-inner {
-    width: 100%;
-    padding: 32% 0 115px;
+    width: 86%;
+    padding: 100px 0 90px;
   }
 
   .services-hero h1 {

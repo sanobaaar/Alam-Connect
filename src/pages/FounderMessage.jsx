@@ -2,7 +2,7 @@ import Footer from "../components/Footer"
 import NavBar from "../components/NavBar"
 
 import founderImg from "../assets/aboutfounder.png"
-import birthImg from "../assets/birthofAlam.png"
+import birthImg from "../assets/birthofAlam.PNG"
 
 const FounderMessage = () => {
   return (
