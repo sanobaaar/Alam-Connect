@@ -63,15 +63,9 @@ function Contact() {
               <span>Starts Here.</span>
             </h1>
 
-            <div className="contact-accent-line" />
-
             <a href="#enquiry-form" className="contact-hero-button">
               PLAN YOUR JOURNEY <span>↗</span>
             </a>
-          </div>
-
-          <div className="contact-hero-label">
-            <span>01</span> PERSONALIZED TRAVEL SOLUTIONS
           </div>
         </section>
 
@@ -145,7 +139,8 @@ function Contact() {
                 <div className="contact-info-icon">☎</div>
                 <div>
                   <span>Phone</span>
-                  <p>Contact our travel team</p>
+
+                  <a href="tel:+919198956759">+91 9198956759</a>
                 </div>
               </div>
             </div>

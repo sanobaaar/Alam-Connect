@@ -2,6 +2,7 @@ import Footer from "../components/Footer"
 import NavBar from "../components/NavBar"
 
 import founderImg from "../assets/aboutfounder.png"
+import birthImg from "../assets/birthofAlam.png"
 
 const FounderMessage = () => {
   return (
@@ -125,7 +126,7 @@ const FounderMessage = () => {
             </div>
 
             <div className="founder-split-image">
-              <img src={founderImg} alt="Aircraft ready for a new journey" loading="lazy" />
+              <img src={birthImg} alt="Aircraft ready for a new journey" loading="lazy" />
             </div>
           </div>
         </section>

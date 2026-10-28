@@ -31,7 +31,7 @@ const services = [
     icon: Users,
     title: "Group Travel & MICE",
     description:
-      "From group tours to corporate meetings, incentives, conferences, and events — we manage every detail for a smooth experience.",
+      "From group tours to corporate meetings, incentives, conferences, and exhibitions — we manage every detail for a smooth experience.",
   },
   {
     number: "05",

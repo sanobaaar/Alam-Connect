@@ -792,7 +792,7 @@ svg {
 }
 
 .founder-section-teal {
-  background: #ceeeee;
+  background: #fff;
 }
 
 .founder-section-light {
@@ -851,7 +851,7 @@ svg {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr);
   align-items: center;
-  gap: 65px;
+  gap: 105px;
   max-width: 1250px;
   margin: 0 auto;
 }
@@ -861,18 +861,11 @@ svg {
 }
 
 .founder-split-image {
-  height: 570px;
+  height: 650px;
   overflow: hidden;
-  border-radius: 5px;
 }
 
-.founder-split-image img {
-  transition: transform 0.7s ease;
-}
 
-.founder-split-image:hover img {
-  transform: scale(1.035);
-}
 
 /* NAME AND PURPOSE */
 
@@ -1136,6 +1129,8 @@ svg {
   --services-black: #000000;
   --services-white: #ffffff;
   --services-offwhite: #f8f8f8;
+  --contact-dark: #A8DADA;
+
 
   width: 100%;
   overflow: hidden;
@@ -2223,6 +2218,8 @@ svg {
   --about-muted: #5b5b5b;
   --about-border: #e4e4e4;
   --about-accent: #097c87;
+  --contact-dark: #A8DADA;
+
 
   width: 100%;
   color: var(--about-text);
@@ -2269,7 +2266,7 @@ svg {
   margin-bottom: 18px;
   color: #caeeee;
   font-size: 0.76rem;
-  font-weight: 700;
+  font-weight: 900;
   letter-spacing: 2.2px;
   line-height: 1.5;
 }
@@ -2363,7 +2360,7 @@ svg {
 /* INTRODUCTION */
 
 .about-intro {
-  background: var(--about-bg);
+  background: #fff;
 }
 
 .about-intro-grid {
@@ -2383,7 +2380,7 @@ svg {
 .about-intro-heading h2 span,
 .about-corporate-content h2 span {
   display: block;
-  color: var(--about-accent);
+  color: #caeeee;
 }
 
 .about-intro-copy p {
@@ -2709,7 +2706,7 @@ svg {
   }
 
   .about-eyebrow {
-    font-size: 0.7rem;
+    font-size: 1.2rem;
     letter-spacing: 1.7px;
   }
 

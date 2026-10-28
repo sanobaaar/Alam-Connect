@@ -96,11 +96,9 @@ export default function About() {
           <div className="about-hero-overlay" />
 
           <div className="about-hero-content">
-
             <h1>
               About <span>Alam Connect</span>
             </h1>
-
 
             <a href="/contact" className="contact-hero-button">
               SEND AN EMAIL <span>↗</span>
@@ -207,7 +205,7 @@ export default function About() {
                 </li>
               </ul>
 
-              <Link to="/corporate" className="about-text-link">
+              <Link to="/services" className="about-text-link">
                 Discover Corporate Travel
                 <ArrowRight size={18} />
               </Link>
